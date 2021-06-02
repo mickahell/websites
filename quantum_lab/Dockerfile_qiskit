@@ -21,10 +21,11 @@ RUN apt-get update -yq
 RUN pip3 install jupyterthemes
 
 RUN jt -t onedork -T -N
+ADD start.sh .
 
 EXPOSE 8888
 
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
+#RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0
@@ -32,4 +33,4 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/
 RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
-CMD ["jupyter notebook --port=8888 --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password='' --certfile=mycert.pem --keyfile mykey.key"]
+CMD ./start.sh
