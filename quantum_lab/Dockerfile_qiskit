@@ -21,7 +21,7 @@ RUN apt-get update -yq
 RUN pip3 install jupyterthemes
 
 RUN jt -t onedork -T -N
-ADD start.sh .
+ADD start.sh /opt/quantum_lab/
 
 EXPOSE 8888
 
@@ -31,4 +31,4 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/
 RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
-CMD ./start.sh
+CMD /opt/quantum_lab/start.sh
