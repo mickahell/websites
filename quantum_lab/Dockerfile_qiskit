@@ -20,8 +20,12 @@ LABEL org.opencontainers.image.title="Qiskit Quantum Lab" \
 RUN apt-get update -yq
 RUN pip3 install jupyterthemes
 
+# Jupyter conf
 RUN jt -t onedork -T -N
+RUN mkdir ~/.jupyter/custom
 COPY jupyter_notebook_config.py ~/.jupyter/jupyter_notebook_config.py
+COPY custom.js ~/.jupyter/custom/custom.js
+
 ADD start.sh /opt/quantum_lab/
 
 EXPOSE 8888
