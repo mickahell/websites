@@ -13,7 +13,7 @@ LABEL org.opencontainers.image.title="Qiskit Quantum Lab" \
       org.opencontainers.image.vendor=${GITHUB_REPOSITORY} \
       org.opencontainers.image.source="https://github.com/mickahell/websites" \
       org.opencontainers.image.url="https://github.com/mickahell/websites/tags" \
-      org.opencontainers.image.description="Qiskit Quantum La" \
+      org.opencontainers.image.description="Qiskit Quantum Lab" \
       org.opencontainers.image.os="Ubuntu Bionic" \
       org.opencontainers.image.version=${GITHUB_REF}
 
