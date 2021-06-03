@@ -20,7 +20,7 @@ LABEL org.opencontainers.image.title="Curriculum Vitae" \
 RUN apt-get update -yq
 RUN pip3 install streamlit
 
-ADD cv/* /opt/cv/
+ADD cv/ /opt/cv/
 ADD start.sh .
 
 EXPOSE 8501
