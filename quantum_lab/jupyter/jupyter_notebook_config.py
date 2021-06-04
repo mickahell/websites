@@ -261,7 +261,7 @@
 
 ## Gets or sets the maximum amount of memory, in bytes, that is allocated for use
 #  by the buffer manager.
-#c.NotebookApp.max_buffer_size = 536870912
+c.NotebookApp.max_buffer_size = 1073741824
 
 ## Gets or sets a lower bound on the open file handles process resource limit.
 #  This may need to be increased if you run into an OSError: [Errno 24] Too many
