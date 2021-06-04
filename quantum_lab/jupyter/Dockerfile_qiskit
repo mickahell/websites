@@ -22,13 +22,12 @@ RUN pip3 install jupyterthemes
 
 # Jupyter conf
 RUN jt -t onedork -T -N
-RUN mkdir ~/.jupyter/custom
-COPY jupyter_notebook_config.py ~/.jupyter/jupyter_notebook_config.py
-COPY custom.js ~/.jupyter/custom/custom.js
+COPY quantum_lab/jupyter/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
+COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
 
-ADD start_jupyter.sh /opt/quantum_lab/
+ADD quantum_lab/jupyter/start_jupyter.sh /opt/quantum_lab/
 
-EXPOSE 8888
+EXPOSE 9999
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0

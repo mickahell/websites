@@ -4,4 +4,6 @@
 
 #jupyter notebook --allow-root --port=8888 --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password='' --certfile=mycert.pem --keyfile mykey.key
 
-jupyter notebook --allow-root --port=8888 --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password=''
+cd /opt/quantum_lab/data/share
+
+jupyter notebook --allow-root --port=9999 --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password=''

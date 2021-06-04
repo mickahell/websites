@@ -20,11 +20,9 @@ LABEL org.opencontainers.image.title="Quantum Lab" \
 RUN apt-get update -yq
 RUN pip3 install streamlit
 
-COPY quantum_lab/app.py /opt/quantum_lab/app.py
-RUN mkdir quantum_lab/.streamlit
-COPY quantum_lab/.streamlit /opt/quantum_lab/.streamlit/config.toml
+ADD quantum_lab/streamlit /opt/quantum_lab/
 
-ADD start.sh .
+ADD quantum_lab/streamlit/start.sh .
 
 EXPOSE 8501
 
