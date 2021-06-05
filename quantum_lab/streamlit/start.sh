@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/quantum_lab/streamlit
+cd /opt/quantum_lab
 streamlit run app.py
