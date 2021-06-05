@@ -18,9 +18,9 @@ header = """
     <table>
         <tbody>
             <tr>
-                <td align="center"><a href="https://qiskit.xtraorbitals.lab"><b>Qiskit</b></a></td>
-                <td align="center"><a href="https://qml.xtraorbitals.lab"><b>Pennylane</b></a></td>
-                <td align="center"><a href="https://cirq.xtraorbitals.lab"><b>Cirq</b></a></td>
+                <td align="center"><a href="https://qiskit.xtraorbitals.xyz"><b>Qiskit</b></a></td>
+                <td align="center"><a href="https://qml.xtraorbitals.xyz"><b>Pennylane</b></a></td>
+                <td align="center"><a href="https://cirq.xtraorbitals.xyz"><b>Cirq</b></a></td>
             </tr>
         </tbody>
     </table>
