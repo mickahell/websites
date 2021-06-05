@@ -10,7 +10,7 @@ then
     port=9998
 elif [[ $LAB = "CIRQ" ]]
 then
-    port=9997
+    port=9999
 fi
 
 jupyter notebook --allow-root --port=$port --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password=''
