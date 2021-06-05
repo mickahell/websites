@@ -7,6 +7,7 @@ ARG GITHUB_REF
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
+ENV LAB=QISKIT
 
 LABEL org.opencontainers.image.title="Qiskit Quantum Lab" \
       org.opencontainers.image.authors=${GITHUB_ACTOR} \
