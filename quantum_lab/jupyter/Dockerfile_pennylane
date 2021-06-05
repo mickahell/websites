@@ -28,7 +28,7 @@ COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
 
 ADD quantum_lab/jupyter/start_jupyter.sh /opt/quantum_lab/
 
-EXPOSE 9998
+EXPOSE 9999
 
 # Add Tini. Tini operates as a process subreaper for jupyter. This prevents kernel crashes.
 ENV TINI_VERSION v0.6.0
