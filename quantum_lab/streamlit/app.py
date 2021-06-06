@@ -37,6 +37,7 @@ article_view = """
     height="500"
     src="https://fullstackquantumcomputation.tech/blog/post-quantum-lab/">
 </iframe>
+<h3>See on <a href="https://fullstackquantumcomputation.tech/blog/post-quantum-lab/"><b>Full-Stack Quantum Computation</b></a></h3>
 """
 article.write(article_view, unsafe_allow_html=True)
 
