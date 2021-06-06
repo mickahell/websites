@@ -17,6 +17,7 @@ sudo certbot --server https://acme-v02.api.letsencrypt.org/directory -d xtraorbi
 
 
 # Get Jupyter examples
+sudo mkdir /opt/share/quantum_lab
 
 # Get Nginx conf
 ## sites-available && sites-enabled
