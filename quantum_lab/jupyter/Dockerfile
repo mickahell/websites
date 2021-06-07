@@ -5,6 +5,8 @@ ARG LAB_ENV
 
 FROM mickahell/quantum_lab_${LAB_ENV}:latest
 
+ARG LAB_ENV
+
 # Var for labels
 ARG GITHUB_ACTOR
 ARG GITHUB_REPOSITORY
