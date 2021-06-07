@@ -1,4 +1,4 @@
-#ARG quantum_env
+ARG quantum_env
 #ARG quantum_env=qiskit
 #ARG quantum_env=qml
 #ARG quantum_env=cirq
@@ -12,8 +12,8 @@ ARG GITHUB_REF
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
-ENV LAB=${quantum_env}
-ENV DEB=${DEBIAN_FRONTEND}
+ENV QUANTUM_ENV=${quantum_env}
+ENV LAB=${QUANTUM_ENV}
 
 LABEL org.opencontainers.image.title="Online ${quantum_env} Lab" \
       org.opencontainers.image.authors=${GITHUB_ACTOR} \
