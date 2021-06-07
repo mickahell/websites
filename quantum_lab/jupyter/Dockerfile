@@ -1,4 +1,4 @@
-ARG quantum_env
+ENV quantum_env
 #ARG quantum_env=qiskit
 #ARG quantum_env=qml
 #ARG quantum_env=cirq
