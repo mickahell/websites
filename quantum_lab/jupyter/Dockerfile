@@ -1,9 +1,9 @@
-ARG quantum_env
+ARG LAB_ENV
 #ARG quantum_env=qiskit
 #ARG quantum_env=qml
 #ARG quantum_env=cirq
 
-FROM mickahell/quantum_lab_${quantum_env}:latest
+FROM mickahell/quantum_lab_${LAB_ENV}:latest
 
 # Var for labels
 ARG GITHUB_ACTOR
@@ -12,15 +12,14 @@ ARG GITHUB_REF
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
-ENV QUANTUM_ENV=${quantum_env}
-ENV LAB=${QUANTUM_ENV}
+ENV LAB=${LAB_ENV}
 
-LABEL org.opencontainers.image.title="Online ${quantum_env} Lab" \
+LABEL org.opencontainers.image.title="Online ${LAB_ENV} Lab" \
       org.opencontainers.image.authors=${GITHUB_ACTOR} \
       org.opencontainers.image.vendor=${GITHUB_REPOSITORY} \
       org.opencontainers.image.source="https://github.com/mickahell/websites" \
       org.opencontainers.image.url="https://github.com/mickahell/websites/tags" \
-      org.opencontainers.image.description="Online Quantum Lab for ${quantum_env} env" \
+      org.opencontainers.image.description="Online Quantum Lab for ${LAB_ENV} env" \
       org.opencontainers.image.os="Ubuntu Bionic" \
       org.opencontainers.image.version=${GITHUB_REF}
 
