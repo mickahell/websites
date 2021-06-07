@@ -3,6 +3,8 @@ ARG LAB_ENV
 #ARG quantum_env=qml
 #ARG quantum_env=cirq
 
+ENV LAB=${LAB_ENV}
+
 FROM mickahell/quantum_lab_${LAB_ENV}:latest
 
 # Var for labels
@@ -12,7 +14,6 @@ ARG GITHUB_REF
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
-ENV LAB=${LAB_ENV}
 
 LABEL org.opencontainers.image.title="Online ${LAB_ENV} Lab" \
       org.opencontainers.image.authors=${GITHUB_ACTOR} \
