@@ -1,7 +1,7 @@
 ARG LAB_ENV
-#ARG quantum_env=qiskit
-#ARG quantum_env=qml
-#ARG quantum_env=cirq
+#ARG LAB_ENV=qiskit
+#ARG LAB_ENV=qml
+#ARG LAB_ENV=cirq
 
 FROM mickahell/quantum_lab_${LAB_ENV}:latest
 
