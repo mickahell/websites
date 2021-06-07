@@ -41,15 +41,6 @@ article_view = """
 """
 article.write(article_view, unsafe_allow_html=True)
 
-termofuse = """
-## Term of use
-Anyone can use these quantum laboratories freely without any limitation, the ony limits are the one of the system. Max memory for a program is limit to 500MB.
-These laboratories doesn't provide private access, means every notebook created will stay publicly available until someone delete it. If you don't want to share your work, feel free to delete your files.
-Owner of the application can not be responsable of any data loose and he doesn't own any of the data produice. Indeed all the data available in the laboratories are in the opensource field.
-Anyone can import work and share it inside the application, if you want to share tutorial and keep them protect from deleting feel free to reach an issue on the [GitHUb repository](https://github.com/mickahell/websites/issues/new) or to send an email to my [GitHub email](https://github.com/mickahell).
-"""
-st.markdown(termofuse)
-
 lib = """
 <br /><br />
 <h2>Libs available</h2>
@@ -96,3 +87,12 @@ footer = """
 If you have an idea of features do not hesitate and create an **[issue](https://github.com/mickahell/quantum_lab/issues/new)**.
 """
 st.markdown(footer, unsafe_allow_html=True)
+
+termofuse = """
+## Term of use
+Anyone can use these quantum laboratories freely without any limitation, the ony limits are the one of the system. Max memory for a program is limit to 500MB.  
+These laboratories doesn't provide private access, means every notebook created will stay publicly available until someone delete it. If you don't want to share your work, feel free to delete your files. 
+Owner of the application is not be responsable of any data produice or loose and he doesn't own any of the data produice. Indeed all the data available in the laboratories are in the opensource field. 
+Anyone can import work and share it inside the application, if you want to share tutorial and keep them protect from deleting feel free to reach an issue on the [GitHUb repository](https://github.com/mickahell/websites/issues/new) or to send an email to my [GitHub email](https://github.com/mickahell).
+"""
+st.markdown(termofuse, unsafe_allow_html=True)
