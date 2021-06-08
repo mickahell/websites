@@ -48,7 +48,7 @@ lib = """
 st.markdown(lib, unsafe_allow_html=True)
 col0, col1, col2, col3 = st.beta_columns(4)
 lib_commun = col0.beta_expander("Common")
-lib_commun.write("```networkx, numpy, matplotlib, notebook, pandas, scipy, tk```")
+lib_commun.write("```python3.8, networkx, numpy, matplotlib, notebook, pandas, scipy, tk```")
 libs_qiskit = col1.beta_expander("Qiskit")
 libs_qiskit.write("```qiskit, qiskit[visualization], qiskit-nature```")
 libs_qml = col2.beta_expander("Pennylane / QML")
