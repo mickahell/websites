@@ -18,21 +18,8 @@ def app():
             </tbody>
         </table>
     </div>
-    <br /><br />
     """
     st.markdown(header, unsafe_allow_html=True)
-
-    article = st.beta_expander("Article on Full-Stack Quantum Computation")
-    article_view = """
-    <iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="100%"
-        height="500"
-        src="https://fullstackquantumcomputation.tech/blog/post-quantum-lab/">
-    </iframe>
-    <h3>See on <a href="https://fullstackquantumcomputation.tech/blog/post-quantum-lab/"><b>Full-Stack Quantum Computation</b></a></h3>
-    """
-    article.write(article_view, unsafe_allow_html=True)
 
     lib = """
     <br /><br />
