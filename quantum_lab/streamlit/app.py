@@ -3,7 +3,7 @@ import quantum_lab
 import quantum_app
 import article
 
-st.set_page_config(page_title="Quantum Lab", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
+st.set_page_config(page_title="Online Quantum Lab", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
 hide_menu_style = """
         <style>
