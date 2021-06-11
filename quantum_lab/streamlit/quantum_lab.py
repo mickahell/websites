@@ -4,7 +4,7 @@ import streamlit as st
 def app():
     header = """
     <div align="center">
-        <h1>Quantum Lab</h1>
+        <h1>Online Quantum Lab</h1>
         Here an online version of my Docker images for <b>Quantum development</b> and <b>Quantum experiments</b>. 
         This platform is only for prototype, testing experiments and science <b>vulgarisation/demo</b>.
         <h2>Access</h2>
