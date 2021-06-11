@@ -13,7 +13,7 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 PAGES = {
-    "Quantum Lab": quantum_lab,
+    "Online Quantum Lab": quantum_lab,
     "Quantum App": quantum_app,
     "Article": article,
 }
