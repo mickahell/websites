@@ -3,7 +3,7 @@ if(location.pathname=="/tree") {
         {
         }
         else{
-        window.location.href='https://www.google.com/chrome/browser/index.html';
+        window.location.href='https://quantum-lab.xtraorbitals.xyz/#term-of-use';
         };
 };
 
