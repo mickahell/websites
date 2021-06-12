@@ -32,6 +32,7 @@ RUN pip3 install jupyterthemes
 RUN jt -t onedork -T -N
 COPY quantum_lab/jupyter/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
+COPY quantum_lab/jupyter/custom_${LAB_ENV}.css /root/.jupyter/custom/custom.css
 
 ADD quantum_lab/jupyter/start_jupyter.sh /opt/quantum_lab/
 
