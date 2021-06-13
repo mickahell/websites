@@ -6,8 +6,7 @@ def app():
     <div align="center">
         <h1>Online Quantum Lab</h1>
         Here an online version of my Docker images for <b>Quantum development</b> and <b>Quantum experiments</b>. 
-        This platform is only for prototype, testing experiments and science <b>vulgarisation/demo</b>. 
-        It doesn't have the purpose to be as evolve as the <a href="https://quantum-computing.ibm.com/">IBM QC platform</a> or the <a href="https://quantumai.google/cirq">Google Cirq colab platform</a>.
+        This platform is only for prototype, testing experiments and science <b>vulgarisation/demo</b>.
         <h2>Access</h2>
         <table>
             <tbody>
@@ -71,7 +70,8 @@ def app():
 
     termofuse = """
     ## Term of use
-    Anyone can use these quantum laboratories freely without any limitation, the ony limits are the one of the system. Max memory for a program is limit to 500MB.  
+    Anyone can use these quantum laboratories freely without any limitation, the ony limits are the one of the system. Max memory for a program is limit to 500MB. 
+    It doesn't have the purpose to be as evolve as the <a href="https://quantum-computing.ibm.com/">IBM QC platform</a> or the <a href="https://quantumai.google/cirq">Google Cirq colab platform</a>.  
     These laboratories doesn't provide private access, means every notebook created will stay publicly available until someone delete it. If you don't want to share your work, feel free to delete your files. 
     Owner of the application is not be responsable of any data produice or loose and he doesn't own any of the data produice. Indeed all the data available in the laboratories are in the opensource field. 
     Anyone can import work and share it inside the application, if you want to share tutorial and keep them protect from deleting feel free to reach an issue on the [GitHUb repository](https://github.com/mickahell/websites/issues/new) or to send an email to my [GitHub email](https://github.com/mickahell).
