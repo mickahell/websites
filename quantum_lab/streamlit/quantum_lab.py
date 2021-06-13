@@ -6,7 +6,8 @@ def app():
     <div align="center">
         <h1>Online Quantum Lab</h1>
         Here an online version of my Docker images for <b>Quantum development</b> and <b>Quantum experiments</b>. 
-        This platform is only for prototype, testing experiments and science <b>vulgarisation/demo</b>.
+        This platform is only for prototype, testing experiments and science <b>vulgarisation/demo</b>. 
+        It doesn't have the purpose to be as evolve as the <a href="https://quantum-computing.ibm.com/">IBM QC platform</a> or the <a href="https://quantumai.google/cirq">Google Cirq colab platform</a>.
         <h2>Access</h2>
         <table>
             <tbody>
