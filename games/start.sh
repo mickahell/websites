@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /opt/main
+cd /opt/games
 streamlit run app.py

@@ -25,8 +25,9 @@ ADD games/ /opt/games/
 ADD games/start.sh .
 
 # Go download my games
-ADD https://github.com/mickahell/quantum_pokemon-fight/archive/refs/tags/3.1.tar.gz /opt/games/
-RUN tar -xf /opt/games/3.1.tar.gz -C /opt/games/ && mv quantum_pokemon-fight-* quantum_pokemon-fight
+ADD https://github.com/mickahell/quantum_pokemon-fight/archive/refs/tags/3.2.tar.gz /opt/games/
+RUN tar -xf /opt/games/3.1.tar.gz -C /opt/games/ && \
+    mv /opt/games/quantum_pokemon-fight-* /opt/games/quantum_pokemon-fight
 
 ## TODO add --> qNim
 
