@@ -20,16 +20,9 @@ LABEL org.opencontainers.image.title="Games" \
 RUN apt-get update -yq
 RUN pip3 install streamlit
 
-ADD games/ /opt/games/
+ADD games/streamlit/ /opt/games/
 
-ADD games/start.sh .
-
-# Go download my games
-ADD https://github.com/mickahell/quantum_pokemon-fight/archive/refs/tags/3.2.tar.gz /opt/games/
-RUN tar -xf /opt/games/3.1.tar.gz -C /opt/games/ && \
-    mv /opt/games/quantum_pokemon-fight-* /opt/games/quantum_pokemon-fight
-
-## TODO add --> qNim
+ADD games/streamlit/start.sh .
 
 EXPOSE 8501
 
