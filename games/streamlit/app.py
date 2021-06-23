@@ -21,6 +21,12 @@ st.markdown(header, unsafe_allow_html=True)
 
 # Run Quantum Pokemon Fight
 if st.checkbox('Quantum Pokemon Fight'):
-    if __name__ == '__main__':
-        sys.argv = ["streamlit", "run", "quantum_pokemon-fight/game.py"]
-        sys.exit(stcli.main())
+    #sys.argv = ["streamlit", "run", "quantum_pokemon-fight/game.py"]
+    #sys.argv = ["streamlit", "run", "test.py"]
+    #sys.exit(stcli.main())
+
+    import subprocess
+    import os
+
+    process = subprocess.Popen(["streamlit", "run", os.path.join('test.py')])
+
