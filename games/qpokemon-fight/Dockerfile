@@ -17,7 +17,7 @@ LABEL org.opencontainers.image.title="Games" \
       org.opencontainers.image.os="Ubuntu Bionic" \
       org.opencontainers.image.version=${GITHUB_REF}
 
-RUN apt-get update -yq
+RUN apt-get update -yq && apt-get dist-upgrade -yq
 RUN apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev -y && \
     git clone https://github.com/tsl0922/ttyd.git && \
     cd ttyd && mkdir build && cd build && \
