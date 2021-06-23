@@ -18,21 +18,21 @@ LABEL org.opencontainers.image.title="Games" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq
-RUN apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && \
+RUN apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev -y && \
     git clone https://github.com/tsl0922/ttyd.git && \
     cd ttyd && mkdir build && cd build && \
     cmake .. && \
     make && make install
 
-ADD games/qpokemon /opt/qpokemon/
+ADD games/qpokemon-fight /opt/qpokemon/
 
-ADD games/qpokemon/start.sh .
+ADD games/qpokemon-fight/start.sh .
 
 # Go download my games
 ADD https://github.com/mickahell/quantum_pokemon-fight/archive/refs/tags/3.2.tar.gz /opt/qpokemon/
-RUN tar -xf /opt/qpokemon/3.1.tar.gz -C /opt/qpokemon/ && \
+RUN tar -xf /opt/qpokemon/3.2.tar.gz -C /opt/qpokemon/ && \
     mv /opt/qpokemon/quantum_pokemon-fight-* /opt/qpokemon/quantum_pokemon-fight
 
-EXPOSE 8501
+EXPOSE 7681
 
 CMD ./start.sh
