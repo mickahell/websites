@@ -24,8 +24,6 @@ RUN apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev -y
     cmake .. && \
     make && make install
 
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-
 ADD games/qpokemon-fight /opt/qpokemon/
 
 ADD games/qpokemon-fight/start.sh .
