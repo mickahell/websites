@@ -29,7 +29,7 @@ ADD games/qpokemon-fight /opt/qpokemon/
 ADD games/qpokemon-fight/start.sh .
 
 # Go download my games
-ARG tag_repo=curl --silent "https://api.github.com/repos/mickahell/quantum_pokemon-fight/releases/latest" | jq -r .tag_name
+ARG tag_repo=$(curl --silent "https://api.github.com/repos/mickahell/quantum_pokemon-fight/releases/latest" | jq -r .tag_name)
 ADD https://github.com/mickahell/quantum_pokemon-fight/archive/refs/tags/${tag_repo}.tar.gz /opt/qpokemon/
 RUN tar -xf /opt/qpokemon/${tag_repo}.tar.gz -C /opt/qpokemon/ && \
     mv /opt/qpokemon/quantum_pokemon-fight-* /opt/qpokemon/quantum_pokemon-fight
