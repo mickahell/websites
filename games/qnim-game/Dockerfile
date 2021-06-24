@@ -31,6 +31,6 @@ ADD https://github.com/Quantronauts/quantum_Nim-game/archive/refs/tags/0.1.tar.g
 RUN tar -xf /opt/qnim/0.1.tar.gz -C /opt/qnim/ && \
     mv /opt/qnim/quantum_Nim-game-* /opt/qnim/quantum_nim-game
 
-EXPOSE 7681
+EXPOSE 7680
 
 CMD ./start.sh
