@@ -25,7 +25,7 @@ LABEL org.opencontainers.image.title="Online ${LAB_ENV} Lab" \
       org.opencontainers.image.os="Ubuntu Bionic" \
       org.opencontainers.image.version=${GITHUB_REF}
 
-RUN apt-get update -yq
+RUN apt-get update -yq && apt-get dist-upgrade -yq
 RUN pip3 install jupyterthemes
 
 # Jupyter conf
