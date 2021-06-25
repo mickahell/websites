@@ -3,6 +3,22 @@ import streamlit as st
 
 def app():
     st.write("# Quantum Pokémon fight")
+
+    rules = st.beta_expander("Rules", expanded=False)
+    rules_view = """
+    A Pokémon fight is a turn by turn game, each opponent as a team of 3 Pokémons and the last who still have Pokémon in shape win the game !  
+    At each turn the fastest Pokémon attack first, if the speed stats are the same the choice will be random.  
+    Each fire, electric, ice and poison attack can inflicted (almost) permanent damages and stats alteration :
+    
+    |   Type   |          Effect          |    Stats    |
+    |:--------:|:------------------------:|:-----------:|
+    | Fire     | Permanent damages        | drop attack |
+    | Ice      | Can't attack             |             |
+    | Electric | Can not attack sometimes | drop speed  |
+    | Poison   | Permanent damages        |             |
+        """
+    rules.write(rules_view, unsafe_allow_html=True)
+
     article = st.beta_expander("How does it works ?", expanded=False)
     article_view = """
         <iframe
