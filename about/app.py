@@ -29,7 +29,7 @@ about = """
     an atom have electron orbiting around him. This electron can be used to calculate the ground state of this atom or of the entire molecule.  
     The __*Xtra*__ particle of the name came from my idea for the future of my ecosystem by adding more and more stuff not online web but also things for IOT.
 """
-st.markdown(about, unsafe_allow_html=True)
+st.markdown(about)
 
 whoami = """
     ## Who am I ?
@@ -45,7 +45,7 @@ whoami = """
     ![GitHub followers](https://img.shields.io/github/followers/mickahell?style=social) 
     ![Twitter Follow](https://img.shields.io/twitter/follow/mickahell89700?style=social) 
 """
-st.markdown(whoami, unsafe_allow_html=True)
+st.markdown(whoami)
 
 techno = """
     ## Technologies used
@@ -56,5 +56,5 @@ techno = """
     - Apps : [Qiskit](https://qiskit.org/) & [Pennylane](https://pennylane.ai/) & [Jupyter notebook](https://jupyter.org/)
     - Languages : Python & Bash & HTML/CSS
 """
-st.markdown(techno, unsafe_allow_html=True)
+st.markdown(techno)
 
