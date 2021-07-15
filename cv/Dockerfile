@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.title="Curriculum Vitae" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq
-RUN pip3 install streamlit
+RUN pip install streamlit
 
 ADD cv/ /opt/cv/
 ADD start.sh .

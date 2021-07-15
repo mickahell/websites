@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.title="xtra Orbitals" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq
-RUN pip3 install streamlit
+RUN pip install streamlit
 
 ADD main/ /opt/main/
 

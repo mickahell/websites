@@ -26,7 +26,7 @@ LABEL org.opencontainers.image.title="Online ${LAB_ENV} Lab" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq && apt-get dist-upgrade -yq
-RUN pip3 install jupyterthemes
+RUN pip install jupyterthemes
 
 # Jupyter conf
 RUN jt -t onedork -T -N
