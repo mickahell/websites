@@ -3,10 +3,11 @@ import streamlit as st
 st.set_page_config(page_title="About", page_icon=":space_invader:", layout='centered', initial_sidebar_state='auto')
 
 hide_menu_style = """
-        <style>
+    <style>
         #MainMenu {visibility: hidden;}
-        </style>
-        """
+        footer::before {content:' Xtra Orbitals™️ | Since 2021 | ';}
+    </style>
+"""
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 header = """
@@ -23,16 +24,19 @@ about = """
     The place is still under development and definitely need lot of graphical improvement 
     but everything you can see here is totally made by me, often from scratch or by using some front and science framework.  
     
-    Why the name Xtra Orbitals ? -> 
+    #### Why the name Xtra Orbitals ?
+    The __*Orbitals*__ particle of the name came from my passion from spacial and especially satellites and robots but also from the Quantum world : 
+    an atom have electron orbiting around him. This electron can be used to calculate the ground state of this atom or of the entire molecule.  
+    The __*Xtra*__ particle of the name came from my idea for the future of my ecosystem by adding more and more stuff not online web but also things for IOT.
 """
 st.markdown(about, unsafe_allow_html=True)
 
 whoami = """
     ## Who am I ?
-    I'm Michael Rollin, I'm system engineer and Quantum enthusiast. I love IT and technology in general.
+    I'm **Michael Rollin**, I'm system engineer and Quantum enthusiast. I love IT and technology in general.  
     Since some years I'm trying to create strong robots who can beat human at playing games 
-    by using not only algorithm but also decision making like Artificial Intelligence with different technologies like the Quantum computing (real computer or simulator).  
-    Also since May 2020, I'm doing research about Quantum computing so this place is also a way to broadcast the tools I'm developing and the results of the research I'm doing.  
+    by using not only algorithm but also decision making like Artificial Intelligence with different technologies like Quantum computing (real computer or simulator).  
+    Also since May 2020, I'm doing research about Quantum computing so, this place is also a way to broadcast the tools I'm developing and the results of the research I'm doing.  
     
     Everything I'm coding is free and open source, so all of my researches, games and projects are fully available on my [GitHub](https://github.com/mickahell) profile.
     
@@ -53,3 +57,4 @@ techno = """
     - Languages : Python & Bash & HTML/CSS
 """
 st.markdown(techno, unsafe_allow_html=True)
+
