@@ -5,7 +5,7 @@ st.set_page_config(page_title="About", page_icon=":space_invader:", layout='cent
 hide_menu_style = """
     <style>
         #MainMenu {visibility: hidden;}
-        footer::before {content:' Xtra Orbitals™️ | Since 2021 | ';}
+        footer::before {content:'Xtra Orbitals™️ | Since 2021 | ';}
     </style>
 """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
