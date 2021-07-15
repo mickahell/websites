@@ -40,14 +40,6 @@ css = """
 """
 st.markdown(css, unsafe_allow_html=True)
 
-title = """
-<div align="center">
-    <h1>Xtra Orbitals</h1>
-</div>
-<br /><br />
-"""
-st.markdown(title, unsafe_allow_html=True)
-
 # Menu
 menu = """
     <div class="header">
@@ -59,3 +51,11 @@ menu = """
     </div>
 """
 st.markdown(menu, unsafe_allow_html=True)
+
+title = """
+<div align="center">
+    <h1>Xtra Orbitals</h1>
+</div>
+<br /><br />
+"""
+st.markdown(title, unsafe_allow_html=True)

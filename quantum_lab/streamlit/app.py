@@ -43,6 +43,18 @@ css = """
 """
 st.markdown(css, unsafe_allow_html=True)
 
+# Menu
+menu = """
+    <div class="header">
+        <a class="active" href="http://xtraorbitals.xyz"><b>Home</b></a>
+        <a href="http://quantum-lab.xtraorbitals.xyz"><b>Lab</b></a>
+        <a href="http://games.xtraorbitals.xyz"><b>Games</b></a>
+        <a class="separateur" <b>|</b></a>
+        <a href="http://about.xtraorbitals.xyz"><b>About</b></a>
+    </div>
+"""
+st.markdown(menu, unsafe_allow_html=True)
+
 PAGES = {
     "Online Quantum Lab": quantum_lab,
     "Quantum App": quantum_app,
