@@ -1,17 +1,18 @@
 import streamlit as st
 
-st.set_page_config(page_title="xtra Orbitals", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
+st.set_page_config(page_title="Xtra Orbitals", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
 hide_menu_style = """
-        <style>
+    <style>
         #MainMenu {visibility: hidden;}
-        </style>
-        """
+        footer::before {content:'Xtra Orbitals™️ | Since 2021 | ';}
+    </style>
+"""
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 header = """
 <div align="center">
-    <h1>xtra Orbitals</h1>
+    <h1>Xtra Orbitals</h1>
 </div>
 <br /><br />
 """
