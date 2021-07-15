@@ -5,13 +5,43 @@ import article
 
 st.set_page_config(page_title="Online Quantum Lab", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
-hide_menu_style = """
+css = """
     <style>
         #MainMenu {visibility: hidden;}
         footer::before {content:'Xtra Orbitals™️ | Since 2021 | ';}
+
+        .header{
+            background: #555;
+            color: #f1f1f1; 
+            position: fixed;
+            top: 0;} 
+
+        .header {
+            overflow: hidden;
+            background-color: #333;}
+
+        .header a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-size: 15px;}
+
+        .header a:hover {
+            background-color: #ddd;
+            color: black;}
+
+        .header a.separateur {
+            background-color: #000;
+            color: white;}
+
+        .header a.active {
+            background-color: #FFF;
+            color: black;}
     </style>
 """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+st.markdown(css, unsafe_allow_html=True)
 
 PAGES = {
     "Online Quantum Lab": quantum_lab,
