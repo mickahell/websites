@@ -70,7 +70,7 @@ about = """
     The __*Orbitals*__ particle of the name came from my passion from spacial and especially satellites and robots but also from the Quantum world : 
     an atom have electron orbiting around him. This electron can be used to calculate the ground state of this atom or of the entire molecule.  
     The __*Xtra*__ particle of the name came from my idea for the future of my ecosystem by adding more and more stuff not online web but also things for IOT.
-    (Bonus :) The _*.xyz*_ is a reference to the main gates in quantum logic.
+    (Bonus :) The _*.xyz*_ is a reference to the main axes of a qubit.
 """
 st.markdown(about)
 
