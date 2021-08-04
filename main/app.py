@@ -68,6 +68,19 @@ here = """
 """
 st.markdown(here)
 
+col0, col1, col2, col3 = st.beta_columns(4)
+lab = col0.beta_expander("Laboratories")
+lab.write("The laboratories is a place for Jupyter apps and tuto on how to Docker quantum apps")
+
+games = col1.beta_expander("Games")
+games.write("Place for testing games against robots. Will you succed to win ?!")
+
+museum = col2.beta_expander("Museum")
+museum.write("Where science and art are ONE !")
+
+about = col3.beta_expander("About")
+about.write("Everything you always wanting to know about here.")
+
 ## Tag cloud
 # Create some sample text
 #text = 'Quantum, games, AI, robots, pokemon, lab, python, qiskit, pennylane, fractals, fun'
