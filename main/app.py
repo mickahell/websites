@@ -70,10 +70,9 @@ st.markdown(here)
 
 ## Tag cloud
 # Create some sample text
-#text = 'Quantum, games, AI, robots, pokemon, lab, python, qiskit, pennylane, fractals, fun'
+# text = 'Quantum, games, AI, robots, pokemon, lab, python, qiskit, pennylane, fractals, fun'
 
-components.html(
-"""
+components.html("""
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 <br /><br />
