@@ -1,6 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Xtra Orbitals", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
@@ -13,7 +12,7 @@ css = """
             background: #555;
             color: #f1f1f1; 
             position: fixed;
-            top: 0;} 
+            top: 0;}
             
         .header {
             overflow: hidden;
@@ -69,22 +68,38 @@ here = """
 st.markdown(here)
 
 col0, col1, col2, col3 = st.beta_columns(4)
-lab = col0.beta_expander("Laboratories")
+lab = col0.beta_expander("Laboratories", True)
 lab.write("""
-The laboratories is a place for Jupyter apps and tuto on how to Docker quantum apps.
-<form action="https://quantum-lab.xtraorbitals.xyz">
-    <input type="submit" value="Quantum Lab" />
-</form>
+    The laboratory is a place for Jupyter apps and tuto on how to Dockerize quantum apps.
+    <form action="https://quantum-lab.xtraorbitals.xyz">
+        <input type="submit" value="Quantum Lab" />
+    </form>
+    <br />
 """, unsafe_allow_html=True)
 
-games = col1.beta_expander("Games")
-games.write("Place for testing games against robots. Will you succed to win ?!")
+games = col1.beta_expander("Games", True)
+games.write("""
+    Place for testing and playing games against robots. Will you succeed to win ?!
+    <form action="https://games.xtraorbitals.xyz">
+        <input type="submit" value="Games" />
+    </form>
+    <br />
+""", unsafe_allow_html=True)
 
-museum = col2.beta_expander("Museum")
-museum.write("Where science and art are ONE !")
+museum = col2.beta_expander("Museum", False)
+museum.write("""
+    Where science and art are ONE !
+    <br />
+""", unsafe_allow_html=True)
 
-about = col3.beta_expander("About")
-about.write("Everything you always wanting to know about here.")
+about = col3.beta_expander("About", True)
+about.write("""
+    Everything you always wanted to know without daring to ask, about here.
+    <form action="https://about.xtraorbitals.xyz">
+        <input type="submit" value="About" />
+    </form>
+    <br />
+""", unsafe_allow_html=True)
 
 ## Tag cloud
 # Create some sample text
@@ -110,4 +125,4 @@ journey
               auto-fractal: 0: Building
             section qMaths
 </div>
-""", height=400, scrolling=False)
+""", height=600, scrolling=False)
