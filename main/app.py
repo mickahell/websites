@@ -8,15 +8,14 @@ css = """
         #MainMenu {visibility: hidden;}
         footer::before {content:'Xtra Orbitals™️ | Since 2021 | ';}
         
-        .header{
+        .header {
             background: #555;
             color: #f1f1f1; 
             position: fixed;
-            top: 0;}
-            
-        .header {
             overflow: hidden;
-            background-color: #333;}
+            background-color: #333;
+            top: 34px;
+            left: 190px;}
 
         .header a {
             float: left;
@@ -37,12 +36,29 @@ css = """
         .header a.active {
             background-color: #FFF;
             color: black;}
+        
+        .logo a {
+            color: black;
+            position: fixed;
+            top: 10px;}
+            
+        .logo img {
+            width: 100px;
+            opacity: 0.7;}
+        
+        .logo img:hover {
+        opacity: 1;}
     </style>
 """
 st.markdown(css, unsafe_allow_html=True)
 
 # Menu
 menu = """
+    <div class="logo">
+        <a href="https://xtraorbitals.xyz">
+            <img src="https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/logo.png"/>
+        </a>
+    </div>
     <div class="header">
         <a class="active" href="http://xtraorbitals.xyz"><b>Home</b></a>
         <a href="http://quantum-lab.xtraorbitals.xyz"><b>Lab</b></a>
@@ -53,6 +69,7 @@ menu = """
 """
 st.markdown(menu, unsafe_allow_html=True)
 
+#st.image('res/logo.png', width=60)
 title = """
     <div align="center">
         <h1>Xtra Orbitals</h1>
