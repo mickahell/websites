@@ -70,7 +70,12 @@ st.markdown(here)
 
 col0, col1, col2, col3 = st.beta_columns(4)
 lab = col0.beta_expander("Laboratories")
-lab.write("The laboratories is a place for Jupyter apps and tuto on how to Docker quantum apps")
+lab.write("""
+The laboratories is a place for Jupyter apps and tuto on how to Docker quantum apps.
+<form action="https://quantum-lab.xtraorbitals.xyz">
+    <input type="submit" value="Quantum Lab" />
+</form>
+""", unsafe_allow_html=True)
 
 games = col1.beta_expander("Games")
 games.write("Place for testing games against robots. Will you succed to win ?!")
