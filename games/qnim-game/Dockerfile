@@ -27,8 +27,8 @@ ADD games/qnim-game /opt/qnim/
 ADD games/qnim-game/start.sh .
 
 # Go download my games
-ADD https://github.com/Quantronauts/quantum_Nim-game/archive/refs/tags/1.0.tar.gz /opt/qnim/
-RUN tar -xf /opt/qnim/1.0.tar.gz -C /opt/qnim/ && \
+ADD https://github.com/Quantronauts/quantum_Nim-game/archive/refs/tags/1.1.tar.gz /opt/qnim/
+RUN tar -xf /opt/qnim/1.1.tar.gz -C /opt/qnim/ && \
     mv /opt/qnim/quantum_Nim-game-* /opt/qnim/quantum_nim-game
 
 EXPOSE 7681
