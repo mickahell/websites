@@ -32,5 +32,6 @@ RUN tar -xf /opt/qnim/1.0.tar.gz -C /opt/qnim/ && \
     mv /opt/qnim/quantum_Nim-game-* /opt/qnim/quantum_nim-game
 
 EXPOSE 7681
+VOLUME /opt/qnim/quantum_nim-game/quantronauts/stats
 
 CMD ./start.sh
