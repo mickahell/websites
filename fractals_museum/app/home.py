@@ -48,7 +48,7 @@ def app():
     column = left_column
     column.write("#### Möbius Strip")
     mobius = call_csv("data/statevector/unlimit_band_10.csv", 100)
-    left_column.pyplot(mobius)
+    column.pyplot(mobius)
     expander_mobius = column.beta_expander("What's about ?")
     expander_mobius.write("100k points : Here put description, math equation and circuit")
 
