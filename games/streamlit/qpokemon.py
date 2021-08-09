@@ -1,4 +1,7 @@
 import streamlit as st
+import pandas as pd
+import datetime
+import plotly.graph_objects as go
 
 
 def app():
@@ -45,3 +48,28 @@ def app():
         [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mickahell/quantum_pokemon-fight)](https://github.com/mickahell/quantum_pokemon-fight/releases)
         """
     st.markdown(badge)
+
+    #############################################################
+    # Graph
+    file_csv = 'stats/qpokemon_results.csv'
+
+    robot_csv = []
+    human_csv = []
+    date_csv = []
+
+    csv_file = pd.read_csv(file_csv, header=None)
+
+    for i in range(len(csv_file[0])):
+        robot_csv.append(csv_file[0][i])
+        human_csv.append(csv_file[1][i])
+        date_csv.append(datetime.datetime.strptime(csv_file[2][i], '%m-%Y').date())
+
+    left_column, right_column = st.beta_columns(2)
+
+    fig_bar = go.Figure([go.Bar(x=['Robot', 'Human'], y=[sum(robot_csv), sum(human_csv)])])
+    fig_bar.update_layout(title_text='Robot VS Human')
+    left_column.plotly_chart(fig_bar, use_container_width=True)
+
+    fig_series = go.Figure([go.Scatter(x=date_csv, y=robot_csv, mode='lines+markers', marker=dict(color="aqua"))])
+    fig_series.update_layout(title_text='Robot evolution')
+    right_column.plotly_chart(fig_series, use_container_width=True)
