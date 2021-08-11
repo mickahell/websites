@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 def app():
     st.write("# Quantum Nim game")
-    rules = st.beta_expander("Rules", expanded=False)
+    rules = st.expander("Rules", expanded=False)
     rules_view = """
     This game is inspiring from the [Nim game](https://en.wikipedia.org/wiki/Nim). You are 2 players face to face, you have 11 sticks in front of you :
     <pre>
@@ -113,7 +113,7 @@ def app():
     </pre>
         """
     rules.write(rules_view, unsafe_allow_html=True)
-    qnim = st.beta_expander("Game", expanded=True)
+    qnim = st.expander("Game", expanded=True)
     qnim_view = """
         <iframe
             title="Quantum Nim Game"
@@ -144,7 +144,7 @@ def app():
         human_csv.append(csv_file[1][i])
         date_csv.append(datetime.datetime.strptime(csv_file[2][i], '%m-%Y').date())
 
-    left_column, right_column = st.beta_columns(2)
+    left_column, right_column = st.columns(2)
 
     fig_bar = go.Figure([go.Bar(x=['Robot', 'Human'], y=[sum(robot_csv), sum(human_csv)])])
     fig_bar.update_layout(title_text='Robot VS Human')

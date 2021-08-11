@@ -63,7 +63,7 @@ def app():
     fig_bar.update_layout(title_text='Robot VS Human')
     st.plotly_chart(fig_bar, use_container_width=True)
 
-    left_column, right_column = st.beta_columns([1, 5])
+    left_column, right_column = st.columns([1, 5])
 
     graph_filter = left_column.radio("Filter", ("Robot", "Human"))
     if graph_filter == 'Human':

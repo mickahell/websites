@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def app():
-    article = st.beta_expander("Article on Full-Stack Quantum Computation", expanded=True)
+    article = st.expander("Article on Full-Stack Quantum Computation", expanded=True)
     article_view = """
     <iframe
         title="Quantum Lab article"

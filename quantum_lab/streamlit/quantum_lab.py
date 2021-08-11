@@ -26,14 +26,14 @@ def app():
     <h2>Libs available</h2>
     """
     st.markdown(lib, unsafe_allow_html=True)
-    col0, col1, col2, col3 = st.beta_columns(4)
-    lib_commun = col0.beta_expander("Common")
+    col0, col1, col2, col3 = st.columns(4)
+    lib_commun = col0.expander("Common")
     lib_commun.write("```python3.8, networkx, numpy, matplotlib, notebook, pandas, scipy, tk```")
-    libs_qiskit = col1.beta_expander("Qiskit")
+    libs_qiskit = col1.expander("Qiskit")
     libs_qiskit.write("```qiskit, qiskit[visualization], qiskit-nature```")
-    libs_qml = col2.beta_expander("Pennylane / QML")
+    libs_qml = col2.expander("Pennylane / QML")
     libs_qml.write("```autograd, pennylane, pennylane-sf, pennylane-qiskit```")
-    libs_cirq = col3.beta_expander("Cirq")
+    libs_cirq = col3.expander("Cirq")
     libs_cirq.write("```cirq, cirq-core[contrib], texlive-latex-base, latexmk```")
 
     body = """
@@ -56,7 +56,7 @@ def app():
     """
     st.markdown(body, unsafe_allow_html=True)
 
-    doi_col0, doi_col1 = st.beta_columns([4, 1])
+    doi_col0, doi_col1 = st.columns([4, 1])
     doi = """
     [![DOI](https://zenodo.org/badge/343446026.svg)](https://zenodo.org/badge/latestdoi/343446026)  
     """

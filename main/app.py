@@ -84,8 +84,8 @@ here = """
 """
 st.markdown(here)
 
-col0, col1, col2, col3 = st.beta_columns(4)
-lab = col0.beta_expander("Laboratories", True)
+col0, col1, col2, col3 = st.columns(4)
+lab = col0.expander("Laboratories", True)
 lab.write("""
     The laboratory is a place for Jupyter apps and tuto on how to Dockerize quantum apps.
     <form action="https://quantum-lab.xtraorbitals.xyz">
@@ -94,7 +94,7 @@ lab.write("""
     <br />
 """, unsafe_allow_html=True)
 
-games = col1.beta_expander("Games", True)
+games = col1.expander("Games", True)
 games.write("""
     Place for testing and playing games against robots. Will you succeed to win ?!
     <form action="https://games.xtraorbitals.xyz">
@@ -103,13 +103,13 @@ games.write("""
     <br />
 """, unsafe_allow_html=True)
 
-museum = col2.beta_expander("Museum", False)
+museum = col2.expander("Museum", False)
 museum.write("""
     Where science and art are ONE !
     <br />
 """, unsafe_allow_html=True)
 
-about = col3.beta_expander("About", True)
+about = col3.expander("About", True)
 about.write("""
     Everything you always wanted to know without daring to ask, about here.
     <form action="https://about.xtraorbitals.xyz">

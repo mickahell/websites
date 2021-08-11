@@ -73,7 +73,7 @@ PAGES = {
     "Article": article,
 }
 
-col_select, col_null = st.beta_columns([1, 4])
+col_select, col_null = st.columns([1, 4])
 
 selection = col_select.selectbox("Navigation", list(PAGES.keys()))
 page = PAGES[selection]
