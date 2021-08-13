@@ -144,7 +144,12 @@ status_cirq = isrunning("https://cirq.xtraorbitals.xyz")
 status_qpokemon = isrunning("https://qpokemon-fight.xtraorbitals.xyz/")
 status_qnim = isrunning("https://qnim-game.xtraorbitals.xyz/")
 
-for i in (status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim):
+# streamlit page
+status_games = isrunning("https://games.xtraorbitals.xyz/")
+status_about = isrunning("https://about.xtraorbitals.xyz/")
+status_lab = isrunning("https://quantum-lab.xtraorbitals.xyz/")
+
+for i in (status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim, status_games, status_about, status_lab):
     if i[1] != "ok":
         msg = i[0], " : is down !"
         st.write(msg)
