@@ -79,7 +79,7 @@ def app():
         graph_csv = robot_evo_csv
 
     fig_series = go.Figure([go.Scatter(x=date_csv, y=graph_csv, mode='lines+markers', marker=dict(color="aqua"))])
-    fig_series.update_layout(title_text='Robot evolution')
+    fig_series.update_layout(title_text='Robot evolution', xaxis_title="Months", yaxis_title="% of victory")
     right_column.plotly_chart(fig_series, use_container_width=True)
 
 
