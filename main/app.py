@@ -1,5 +1,15 @@
 import streamlit as st
 import streamlit.components.v1 as components
+import urllib.request
+
+
+def isrunning(url):
+    status = urllib.request.urlopen(url).getcode()
+    if status == 200:
+        return [url, "ok"]
+    else:
+        return [url, "ko"]
+
 
 st.set_page_config(page_title="Xtra Orbitals", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
@@ -69,7 +79,6 @@ menu = """
 """
 st.markdown(menu, unsafe_allow_html=True)
 
-#st.image('res/logo.png', width=60)
 title = """
     <div align="center">
         <h1>Xtra Orbitals</h1>
@@ -121,6 +130,24 @@ about.write("""
 ## Tag cloud
 # Create some sample text
 # text = 'Quantum, games, AI, robots, pokemon, lab, python, qiskit, pennylane, fractals, fun'
+
+## Check apps status
+
+status = """
+    ## Status
+"""
+st.markdown(status)
+
+status_qiskit = isrunning("https://qiskit.xtraorbitals.xyz")
+status_penny = isrunning("https://pennylane.xtraorbitals.xyz")
+status_cirq = isrunning("https://cirq.xtraorbitals.xyz")
+status_qpokemon = isrunning("https://qpokemon-fight.xtraorbitals.xyz/")
+status_qnim = isrunning("https://qnim-game.xtraorbitals.xyz/")
+
+for i in (status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim):
+    if i[1] != "ok":
+        msg = i[0], " : is down !"
+        st.write(msg)
 
 components.html("""
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
