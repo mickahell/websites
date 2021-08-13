@@ -156,14 +156,14 @@ components.html("""
 <div class="mermaid">
 %%{init: {'theme': 'base', 'themeVariables': {'primaryTextColor': '#FFF', 'primaryColor': '#000ccc', "fontSize": "20px"}}}%%
 journey
-            title Apps status
+            title Apps version
             section Laboratories
-              Qiskit: 7: On
-              Pennylane: 7: On
-              Cirq: 7: On
+              Qiskit: 7: v1
+              Pennylane: 7: v1
+              Cirq: 7: v1
             section Games
-              qPokemon: 7: On
-              qNim: 7: On
+              qPokemon: 7: v1
+              qNim: 7: v1
             section Fractals
               Museum: 0: Building
               auto-fractal: 0: Building
