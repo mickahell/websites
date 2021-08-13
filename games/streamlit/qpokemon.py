@@ -55,6 +55,8 @@ def app():
 
     robot_csv = []
     human_csv = []
+    robot_evo_csv = []
+    human_evo_csv = []
     date_csv = []
 
     csv_file = pd.read_csv(file_csv, header=None)
@@ -62,6 +64,8 @@ def app():
     for i in range(len(csv_file[0])):
         robot_csv.append(csv_file[0][i])
         human_csv.append(csv_file[1][i])
+        robot_evo_csv.append(csv_file[0][i] / (csv_file[1][i] + csv_file[0][i]) * 100)
+        human_evo_csv.append(csv_file[1][i] / (csv_file[1][i] + csv_file[0][i]) * 100)
         date_csv.append(datetime.datetime.strptime(csv_file[2][i], '%m-%Y').date())
 
     left_column, right_column = st.columns(2)
@@ -70,6 +74,6 @@ def app():
     fig_bar.update_layout(title_text='Robot VS Human')
     left_column.plotly_chart(fig_bar, use_container_width=True)
 
-    fig_series = go.Figure([go.Scatter(x=date_csv, y=robot_csv, mode='lines+markers', marker=dict(color="aqua"))])
-    fig_series.update_layout(title_text='Robot evolution')
+    fig_series = go.Figure([go.Scatter(x=date_csv, y=robot_evo_csv, mode='lines+markers', marker=dict(color="aqua"))])
+    fig_series.update_layout(title_text='Robot evolution', xaxis_title="Months", yaxis_title="% of victory",)
     right_column.plotly_chart(fig_series, use_container_width=True)

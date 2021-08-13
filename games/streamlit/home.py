@@ -22,6 +22,8 @@ def app():
 
     robot_csv = []
     human_csv = []
+    robot_evo_csv = []
+    human_evo_csv = []
     date_csv = []
 
     ## Qpokemon
@@ -51,8 +53,13 @@ def app():
         else:
             robot_csv.append(csv_file[0][compteur])
             human_csv.append(csv_file[1][compteur])
+
             date_csv.append(temp_date)
         compteur += 1
+
+    for i in range(len(robot_csv)):
+        robot_evo_csv.append(robot_csv[i] / (human_csv[i] + robot_csv[i]) * 100)
+        human_evo_csv.append(human_csv[i] / (human_csv[i] + robot_csv[i]) * 100)
 
     graph = """
     ## Graph - Victory
@@ -67,9 +74,9 @@ def app():
 
     graph_filter = left_column.radio("Filter", ("Robot", "Human"))
     if graph_filter == 'Human':
-        graph_csv = human_csv
+        graph_csv = human_evo_csv
     else:
-        graph_csv = robot_csv
+        graph_csv = robot_evo_csv
 
     fig_series = go.Figure([go.Scatter(x=date_csv, y=graph_csv, mode='lines+markers', marker=dict(color="aqua"))])
     fig_series.update_layout(title_text='Robot evolution')
