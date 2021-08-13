@@ -131,8 +131,6 @@ about.write("""
 # Create some sample text
 # text = 'Quantum, games, AI, robots, pokemon, lab, python, qiskit, pennylane, fractals, fun'
 
-## Check apps status
-
 status = """
     ## Status
 """
@@ -143,7 +141,6 @@ status_penny = isrunning("https://pennylane.xtraorbitals.xyz")
 status_cirq = isrunning("https://cirq.xtraorbitals.xyz")
 status_qpokemon = isrunning("https://qpokemon-fight.xtraorbitals.xyz/")
 status_qnim = isrunning("https://qnim-game.xtraorbitals.xyz/")
-
 # streamlit page
 status_games = isrunning("https://games.xtraorbitals.xyz/")
 status_about = isrunning("https://about.xtraorbitals.xyz/")
