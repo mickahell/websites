@@ -1,11 +1,11 @@
 import streamlit as st
 import streamlit.components.v1 as components
-import urllib.request
+import requests
 
 
 def isrunning(url):
-    status = urllib.request.urlopen(url).getcode()
-    if status == 200:
+    status = requests.get(url)
+    if status.status_code == 200:
         return [url, "ok"]
     else:
         return [url, "ko"]
