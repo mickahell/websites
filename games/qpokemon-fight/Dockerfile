@@ -29,8 +29,8 @@ ADD games/qpokemon-fight /opt/qpokemon/
 ADD games/qpokemon-fight/start.sh .
 
 # Go download my games
-ADD https://github.com/mickahell/quantum_pokemon-fight/archive/refs/tags/3.7.tar.gz /opt/qpokemon/
-RUN tar -xf /opt/qpokemon/3.7.tar.gz -C /opt/qpokemon/ && \
+ADD hhttps://codeload.github.com/mickahell/quantum_pokemon-fight/zip/refs/heads/main /opt/qpokemon/
+RUN tar -xf /opt/qpokemon/quantum_pokemon-fight-main.zip -C /opt/qpokemon/ && \
     mv /opt/qpokemon/quantum_pokemon-fight-* /opt/qpokemon/quantum_pokemon-fight
 
 EXPOSE 7681
