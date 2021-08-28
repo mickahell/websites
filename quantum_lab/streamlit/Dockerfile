@@ -21,6 +21,7 @@ RUN apt-get update -yq
 RUN pip install streamlit
 
 ADD quantum_lab/streamlit /opt/quantum_lab/
+ADD menu.py /opt/quantum_lab/
 
 ADD quantum_lab/streamlit/start.sh .
 
