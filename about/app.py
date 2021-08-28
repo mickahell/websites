@@ -49,7 +49,7 @@ techno = """
     The entire platform is structured as micro-services, each pages and apps are independents from each others.  
     List of all the technologies used for this platform :
     - Front : [Streamlit](https://streamlit.io/) & [ttyd](https://tsl0922.github.io/ttyd/)
-    - Back : [Docker](https://www.docker.com/) & [NGINX](https://www.nginx.com/) & [GitHub Actions](https://github.com/features/actions)
+    - Back : [Docker](https://www.docker.com/) & [NGINX](https://www.nginx.com/) & [GitHub Actions](https://github.com/features/actions) & [ANSIBLE](https://www.ansible.com/)
     - Apps : [Qiskit](https://qiskit.org/) & [Pennylane](https://pennylane.ai/) & [Jupyter notebook](https://jupyter.org/)
     - Languages : Python & Bash & HTML/CSS
 """
