@@ -25,7 +25,7 @@ jobs:
       run: |
         IMAGE_ID=ghcr.io/${{ github.repository_owner }}/xtraorbitals/page_main
         IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-        docker tag $IMAGE_NAME $IMAGE_ID:latest
+        docker tag page_main $IMAGE_ID:latest
         docker push $IMAGE_ID:latest
 
   about:
@@ -45,5 +45,5 @@ jobs:
       run: |
         IMAGE_ID=ghcr.io/${{ github.repository_owner }}/xtraorbitals/page_about
         IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-        docker tag $IMAGE_NAME $IMAGE_ID:latest
+        docker tag page_about $IMAGE_ID:latest
         docker push $IMAGE_ID:latest
