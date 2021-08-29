@@ -61,7 +61,7 @@ jobs:
   qnim:
     name: Build qnim
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.job == 'qpokemon' || github.event.inputs.job == 'all' }}
+    if: ${{ github.event.inputs.job == 'qnim' || github.event.inputs.job == 'all' }}
     permissions:
       packages: write
       contents: read
