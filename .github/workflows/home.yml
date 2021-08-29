@@ -15,17 +15,20 @@ jobs:
     permissions:
       packages: write
       contents: read
+    env:
+      IMAGE_NAME: "page_main"
+      BASEFOLDER: "main"
     steps:
     - uses: actions/checkout@v2
     - name: Build image
-      run: docker build . --file main/Dockerfile --tag page_main:latest
+      run: docker build . --file ${{ env.BASEFOLDER }}/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Push image
       run: |
-        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/xtraorbitals/page_main
+        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/xtraorbitals/${{ env.IMAGE_NAME }}
         IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-        docker tag page_main $IMAGE_ID:latest
+        docker tag ${{ env.IMAGE_NAME }} $IMAGE_ID:latest
         docker push $IMAGE_ID:latest
 
   about:
@@ -35,15 +38,18 @@ jobs:
     permissions:
       packages: write
       contents: read
+    env:
+      IMAGE_NAME: "page_about"
+      BASEFOLDER: "about"
     steps:
     - uses: actions/checkout@v2
     - name: Build image
-      run: docker build . --file about/Dockerfile --tag page_about:latest
+      run: docker build . --file ${{ env.BASEFOLDER }}/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Push image
       run: |
-        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/xtraorbitals/page_about
+        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/xtraorbitals/${{ env.IMAGE_NAME }}
         IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-        docker tag page_about $IMAGE_ID:latest
+        docker tag ${{ env.IMAGE_NAME }} $IMAGE_ID:latest
         docker push $IMAGE_ID:latest
