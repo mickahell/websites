@@ -17,12 +17,11 @@ jobs:
       contents: read
     steps:
     - uses: actions/checkout@v2
-    - name: Set vars env
+    - name: Build image
       env:
         IMAGE_NAME: "page_games"
         PATH_FOLDER: "streamlit"
         BASEFOLDER: "games"
-    - name: Build image
       run: docker build . --file $BASEFOLDER/$PATH_FOLDER/Dockerfile --tag $IMAGE_NAME:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -42,12 +41,11 @@ jobs:
       contents: read
     steps:
     - uses: actions/checkout@v2
-    - name: Set vars env
+    - name: Build image
       env:
         IMAGE_NAME: "qpokemon_games"
         PATH_FOLDER: "qpokemon-fight"
         BASEFOLDER: "games"
-    - name: Build image
       run: docker build . --file $BASEFOLDER/$PATH_FOLDER/Dockerfile --tag $IMAGE_NAME:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -67,12 +65,11 @@ jobs:
       contents: read
     steps:
     - uses: actions/checkout@v2
-    - name: Set vars env
+    - name: Build image
       env:
         IMAGE_NAME: "qnim_games"
         PATH_FOLDER: "qnim-game"
         BASEFOLDER: "games"
-    - name: Build image
       run: docker build . --file $BASEFOLDER/$PATH_FOLDER/Dockerfile --tag $IMAGE_NAME:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
