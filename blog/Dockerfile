@@ -17,14 +17,16 @@ LABEL org.opencontainers.image.title="Blog" \
       org.opencontainers.image.os="Ubuntu Bionic" \
       org.opencontainers.image.version=${GITHUB_REF}
 
-RUN apt-get update -yq
+RUN apt-get update -yq \
+&& apt-get install python3-pip -y \
 
 ADD blog/ /opt/blog/
 ADD menu.py /opt/blog/
 
 ADD blog/start.sh .
 
-RUN pip install /opt/blog/requirements.txt
+RUN pip3 install --upgrade pip setuptools
+RUN pip3 install -r /opt/blog/requirements.txt
 
 EXPOSE 8501
 
