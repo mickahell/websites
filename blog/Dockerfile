@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.title="Blog" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq \
-&& apt-get install python3-pip -y \
+&& apt-get install python3-pip -y
 
 ADD blog/ /opt/blog/
 ADD menu.py /opt/blog/
