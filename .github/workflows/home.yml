@@ -55,7 +55,7 @@ jobs:
         docker push $IMAGE_ID:latest
 
   blog:
-    name: Build page_about
+    name: Build page_blog
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.job == 'blog' || github.event.inputs.job == 'all' }}
     permissions:
