@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def tag():
-    tag = ["qiskit", "about"]
+    tag = ["hackaton", "coop"]
     date = "2021"
     return tag, date
 
@@ -19,10 +19,10 @@ def article():
 
 
 def preview():
-    key = "advocate"
+    key = "quantronauts"
     url = str("[go to up](#" + key + ")")
 
-    st.header("Became advocate !", anchor=key)
+    st.header("Xanadu Hackaton", anchor=key)
     preview = """
         Preview ...............................................
         ..........................................................;
