@@ -3,7 +3,7 @@ import streamlit as st
 
 def tag():
     tag = ["hackaton", "game"]
-    date = "2021"
+    date = "04/2021"
     return tag, date
 
 
