@@ -2,30 +2,30 @@ import streamlit as st
 
 
 def tag():
-    tag = ["qiskit", "game"]
-    date = "01/2021"
+    tag = ["experiment"]
+    date = "03/2021"
     return tag, date
 
 
 def article():
     article_view = """
         <iframe
-            title="Quantum Pokémon Fight article"
+            title="Quantum Laboratory"
             width="100%"
             height="900"
-            src="https://fullstackquantumcomputation.tech/blog/post-quantum-pokemon-fight/">
+            src="https://fullstackquantumcomputation.tech/blog/post-quantum-lab/">
         </iframe>
         """
     st.write(article_view, unsafe_allow_html=True)
 
 
 def preview():
-    key = "pokemon"
+    key = "lab"
     url = str("[go to up](#" + key + ")")
 
-    st.header("A quantum robot who play Pokémon", anchor=key)
+    st.header("Docker images for Quantum Lab", anchor=key)
     preview = """
-        A quantum game and algorithm to fight in Pokemon.
+        A simple docker image to simulate a full Quantum laboratory.
     """
     with st.expander(preview):
         article()
