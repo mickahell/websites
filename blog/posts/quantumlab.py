@@ -1,10 +1,24 @@
 import streamlit as st
+import sys
+from os import path
+
+sys.path.append(path.abspath('../'))
+
+import function
 
 
 def tag():
     tag = ["experiment"]
     date = "03/2021"
-    return tag, date
+    lecture_time = "3"
+    key = "lab"
+    title = "Docker images for Quantum Lab"
+    extra = ""
+    preview = """
+            A simple docker image to simulate a full Quantum laboratory.
+            """
+
+    return tag, date, lecture_time, key, title, extra, preview
 
 
 def article():
@@ -20,13 +34,10 @@ def article():
 
 
 def preview():
-    key = "lab"
-    url = str("[go to up](#" + key + ")")
+    tags, date, lecture_time, key, title, extra, preview = tag()
 
-    st.header("Docker images for Quantum Lab", anchor=key)
-    preview = """
-        A simple docker image to simulate a full Quantum laboratory.
-    """
+    function.metadata(tags, date, lecture_time, key, title, extra)
+
     with st.expander(preview):
         article()
-        st.markdown(url)
+        st.markdown(str("[go to up](#" + key + ")"))

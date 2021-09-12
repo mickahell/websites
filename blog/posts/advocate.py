@@ -1,10 +1,23 @@
 import streamlit as st
+import sys
+from os import path
+
+sys.path.append(path.abspath('../'))
+
+import function
 
 
 def tag():
     tag = ["qiskit", "about"]
     date = "09/2021"
-    return tag, date
+    lecture_time = "3"
+    key = "advocate"
+    title = "Became advocate !"
+    extra = "You can find me in https://qiskit.org/advocates/ !"
+    preview = """
+        I started Quantum Computing since a year and half, today I'm now a Qiskit Advocate, here my Qiskit journey...
+        """
+    return tag, date, lecture_time, key, title, extra, preview
 
 
 def article():
@@ -58,22 +71,20 @@ All of my experiments even the most simple are available in a GitHub repository.
 ### To conclude
 I enjoy so much doing all of these, some are now static and will no longer evolved but some other as 
 the games AI (aka the robots) have their data analyse and will evolve to make them more performable.
+
+### Bonus
+What a surprise !! 🎁 As gift for becoming advocate, IBM and the Qiskit community sent me these goodies : 
+a backpack with Qiskit logo and an IBM water bottle. Thanks a lot !
     """
-    st.write(article)
+    st.write(article, unsafe_allow_html=True)
+    st.image('posts/ressources/swagpack.png', width=400, output_format='PNG')
 
 
 def preview():
-    key = "advocate"
-    url = str("[go to up](#" + key + ")")
-    tags, date = tag()
-    meta = "<div color='grey'>" + date + "</div>" + " | " + "3 min read"
+    tags, date, lecture_time, key, title, extra, preview = tag()
 
-    st.header("Became advocate !", anchor=key)
-    st.write(meta, unsafe_allow_html=True)
-    st.write("You can find me in https://qiskit.org/advocates/ looking for Michael !")
-    preview = """
-        I started Quantum Computing since a year and half, today I'm now a Qiskit Advocate, here my Qiskit journey...
-    """
+    function.metadata(tags, date, lecture_time, key, title, extra)
+
     with st.expander(preview):
         article()
-        st.markdown(url)
+        st.markdown(str("[go to up](#" + key + ")"))

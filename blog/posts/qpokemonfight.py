@@ -1,10 +1,24 @@
 import streamlit as st
+import sys
+from os import path
+
+sys.path.append(path.abspath('../'))
+
+import function
 
 
 def tag():
     tag = ["qiskit", "game"]
     date = "01/2021"
-    return tag, date
+    lecture_time = "7"
+    key = "pokemon"
+    title = "A quantum robot who play Pokémon"
+    extra = ""
+    preview = """
+            A quantum game and algorithm to fight in Pokemon.
+        """
+
+    return tag, date, lecture_time, key, title, extra, preview
 
 
 def article():
@@ -20,13 +34,10 @@ def article():
 
 
 def preview():
-    key = "pokemon"
-    url = str("[go to up](#" + key + ")")
+    tags, date, lecture_time, key, title, extra, preview = tag()
 
-    st.header("A quantum robot who play Pokémon", anchor=key)
-    preview = """
-        A quantum game and algorithm to fight in Pokemon.
-    """
+    function.metadata(tags, date, lecture_time, key, title, extra)
+
     with st.expander(preview):
         article()
-        st.markdown(url)
+        st.markdown(str("[go to up](#" + key + ")"))
