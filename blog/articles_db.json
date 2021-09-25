@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "title": "Became advocate !",
         "date": "09/2021",
         "link": "htttps://blog.xtraorbitals.xyz/#advocate",
@@ -10,6 +11,7 @@
         ]
     },
     {
+        "id": 1,
         "title": "Docker images for Quantum Lab",
         "date": "03/2021",
         "link": "htttps://blog.xtraorbitals.xyz/#lab",
@@ -19,6 +21,7 @@
         ]
     },
     {
+        "id": 2,
         "title": "A quantum robot who play Pokemon",
         "date": "01/2021",
         "link": "htttps://blog.xtraorbitals.xyz/#pokemon",
