@@ -14,9 +14,7 @@ def tag():
     key = "advocate"
     title = "Became advocate !"
     extra = "You can find me in https://qiskit.org/advocates/ !"
-    preview = """
-        I started Quantum Computing since a year and half, today I'm now a Qiskit Advocate, here my Qiskit journey...
-        """
+    preview = """I started Quantum Computing since a year and half, today I'm now a Qiskit Advocate, here my Qiskit journey..."""
     return tag, date, lecture_time, key, title, extra, preview
 
 

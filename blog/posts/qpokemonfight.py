@@ -12,11 +12,9 @@ def tag():
     date = "01/2021"
     lecture_time = "7"
     key = "pokemon"
-    title = "A quantum robot who play Pokémon"
+    title = "A quantum robot who play Pokemon"
     extra = ""
-    preview = """
-            A quantum game and algorithm to fight in Pokemon.
-        """
+    preview = """A quantum game and algorithm to fight in Pokemon."""
 
     return tag, date, lecture_time, key, title, extra, preview
 

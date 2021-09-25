@@ -14,9 +14,7 @@ def tag():
     key = "lab"
     title = "Docker images for Quantum Lab"
     extra = ""
-    preview = """
-            A simple docker image to simulate a full Quantum laboratory.
-            """
+    preview = """A simple docker image to simulate a full Quantum laboratory."""
 
     return tag, date, lecture_time, key, title, extra, preview
 
