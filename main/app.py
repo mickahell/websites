@@ -145,7 +145,7 @@ journey
 # Author
 st.write("---")
 col0, col1 = st.columns([1, 10])
-col0.image('posts/ressources/IMG_1574.png', output_format='PNG', use_column_width=True)
+col0.image('ressources/IMG_1574.png', output_format='PNG', use_column_width=True)
 col1.write("""
 __Michaël Rollin__ : <div style='color:grey'>System engineer & Qiskit Advocate</div>
                     I create quantum autom processes and tools for IT engineering.  

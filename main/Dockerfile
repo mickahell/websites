@@ -22,6 +22,7 @@ RUN pip install streamlit
 
 ADD main/ /opt/main/
 ADD menu.py /opt/main/
+ADD ressources/ /opt/main/ressources
 
 ADD main/start.sh .
 
