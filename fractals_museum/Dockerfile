@@ -22,7 +22,7 @@ RUN apt-get update -yq
 ADD fractals_museum/app/ /opt/museum/
 ADD menu.py /opt/museum/
 
-ADD fractals-museum/start.sh .
+ADD fractals_museum/start.sh .
 
 RUN pip3 install -r /opt/blog/requirements.txt
 

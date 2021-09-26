@@ -17,7 +17,7 @@ def app():
             The museum is still under development, the first experiments/gallery are available but 
             are still subject to change and evolve. If you encounter some trouble, just refresh the page !  
             Also some bugs can appear in the creation mode. Also, the processes can take some minutes to run correctly.  
-            The form study for the platform is still, the goal is to reach at least 200 answer, 
+            The form study for the platform is still open, the goal is to reach at least 200 answer, 
             it takes less than 30 secs to fill it.   
             --> [![](https://img.shields.io/badge/Form-Access-orange)](https://docs.google.com/forms/d/e/1FAIpQLSf-qSPuL8VQSi0BHwCzIBxck16gHNwUUBtCI7zDNVS7PLZYIg/viewform)
             """"")
