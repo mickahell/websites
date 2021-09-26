@@ -110,7 +110,7 @@ status_games = isrunning("https://games.xtraorbitals.xyz/")
 status_about = isrunning("https://about.xtraorbitals.xyz/")
 status_lab = isrunning("https://quantum-lab.xtraorbitals.xyz/")
 status_blog = isrunning("https://blog.xtraorbitals.xyz/")
-status_museum = isrunning("https://beta.museum.xtraorbitals.xyz/")
+status_museum = isrunning("https://beta-museum.xtraorbitals.xyz/")
 
 for i in (
 status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim, status_games, status_about, status_lab):
