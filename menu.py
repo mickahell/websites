@@ -79,7 +79,7 @@ def menu_main():
             <a class="active" href="http://xtraorbitals.xyz"><b>Home</b></a>
             <a href="http://quantum-lab.xtraorbitals.xyz"><b>Lab</b></a>
             <a href="http://games.xtraorbitals.xyz"><b>Games</b></a>
-            <a href="http://beta.museum.xtraorbitals.xyz"><b>Museum</b></a>
+            <a href="http://beta.museum.xtraorbitals.xyz"><b>Beta Museum</b></a>
             <a class="separateur" <b>|</b></a>
             <a href="http://blog.xtraorbitals.xyz"><b>Blog</b></a>
             <a class="separateur" <b>|</b></a>

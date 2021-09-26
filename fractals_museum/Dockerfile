@@ -24,7 +24,7 @@ ADD menu.py /opt/museum/
 
 ADD fractals_museum/start.sh .
 
-RUN pip3 install -r /opt/blog/requirements.txt
+RUN pip3 install -r /opt/museum/requirements.txt
 
 EXPOSE 8501
 
