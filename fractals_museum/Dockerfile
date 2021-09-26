@@ -18,11 +18,13 @@ LABEL org.opencontainers.image.title="Quantum Museum" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq
-RUN pip install streamlit
 
 ADD fractals-museum/app/ /opt/museum/
+ADD menu.py /opt/museum/
 
 ADD fractals-museum/start.sh .
+
+RUN pip3 install -r /opt/blog/requirements.txt
 
 EXPOSE 8501
 

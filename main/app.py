@@ -90,7 +90,7 @@ for i in articles_db:
             for u in i["tag"]:
                 str_tag = str_tag + " #" + u
             meta = "<div style='color:grey'>" + i["date"] + " | " + str_tag + "</div>"
-            button = "<form action=" + i['link'] + "><input type='submit' value='See' /></form>"
+            button = "<form action=" + i['link'] + "><input type='submit' value='See >' /></form>"
             st.write(meta, unsafe_allow_html=True)
             st.write(i["preview"] + "<br /><br />" + button, unsafe_allow_html=True)
     compteur += 1
@@ -110,6 +110,7 @@ status_games = isrunning("https://games.xtraorbitals.xyz/")
 status_about = isrunning("https://about.xtraorbitals.xyz/")
 status_lab = isrunning("https://quantum-lab.xtraorbitals.xyz/")
 status_blog = isrunning("https://blog.xtraorbitals.xyz/")
+status_museum = isrunning("https://beta.museum.xtraorbitals.xyz/")
 
 for i in (
 status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim, status_games, status_about, status_lab):

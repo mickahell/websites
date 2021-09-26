@@ -8,7 +8,7 @@ def app():
     st.title("Create your uniq qfractal")
     st.write("Here the creation of the fractal base")
 
-    expander = st.beta_expander("What's happening ?")
+    expander = st.expander("What's happening ?")
     expander.write("Here you could put in some really, really long explanations...")
 
     # App code
