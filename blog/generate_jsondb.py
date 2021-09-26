@@ -12,7 +12,7 @@ for i in POSTS:
         "id": compteur,
         "title": title,
         "date": date,
-        "link": "htttps://blog.xtraorbitals.xyz/#" + key,
+        "link": "https://blog.xtraorbitals.xyz/#" + key,
         "preview": preview,
         "tag": tags
     }

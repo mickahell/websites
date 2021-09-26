@@ -3,7 +3,7 @@
         "id": 0,
         "title": "Became advocate !",
         "date": "09/2021",
-        "link": "htttps://blog.xtraorbitals.xyz/#advocate",
+        "link": "https://blog.xtraorbitals.xyz/#advocate",
         "preview": "I started Quantum Computing since a year and half, today I'm now a Qiskit Advocate, here my Qiskit journey...",
         "tag": [
             "qiskit",
@@ -14,7 +14,7 @@
         "id": 1,
         "title": "Docker images for Quantum Lab",
         "date": "03/2021",
-        "link": "htttps://blog.xtraorbitals.xyz/#lab",
+        "link": "https://blog.xtraorbitals.xyz/#lab",
         "preview": "A simple docker image to simulate a full Quantum laboratory.",
         "tag": [
             "experiment"
@@ -24,7 +24,7 @@
         "id": 2,
         "title": "A quantum robot who play Pokemon",
         "date": "01/2021",
-        "link": "htttps://blog.xtraorbitals.xyz/#pokemon",
+        "link": "https://blog.xtraorbitals.xyz/#pokemon",
         "preview": "A quantum game and algorithm to fight in Pokemon.",
         "tag": [
             "qiskit",
