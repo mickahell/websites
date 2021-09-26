@@ -84,15 +84,16 @@ art0, art1, art2 = st.columns(3)
 artcol = [art0, art1, art2]
 compteur = 0
 for i in articles_db:
-    with artcol[compteur]:
-        with st.expander(i["title"], True):
-            str_tag = ""
-            for u in i["tag"]:
-                str_tag = str_tag + " #" + u
-            meta = "<div style='color:grey'>" + i["date"] + " | " + str_tag + "</div>"
-            button = "<form action=" + i['link'] + "><input type='submit' value='See >' /></form>"
-            st.write(meta, unsafe_allow_html=True)
-            st.write(i["preview"] + "<br /><br />" + button, unsafe_allow_html=True)
+    if int(i['id']) < 3:
+        with artcol[compteur]:
+            with st.expander(i["title"], True):
+                str_tag = ""
+                for u in i["tag"]:
+                    str_tag = str_tag + " #" + u
+                meta = "<div style='color:grey'>" + i["date"] + " | " + str_tag + "</div>"
+                button = "<form action=" + i['link'] + "><input type='submit' value='See >' /></form>"
+                st.write(meta, unsafe_allow_html=True)
+                st.write(i["preview"] + "<br /><br />" + button, unsafe_allow_html=True)
     compteur += 1
 
 status = """
@@ -135,8 +136,8 @@ journey
               qPokemon: 7: v1
               qNim: 7: v1
             section Fractals
-              Museum: 0: Building
-              auto-fractal: 0: Building
+              Museum: 4: Building
+              auto-fractal: 4: Building
             section qMaths
 </div>
 """, height=600, scrolling=False)
