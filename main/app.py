@@ -115,7 +115,7 @@ status_museum = isrunning("https://beta-museum.xtraorbitals.xyz/")
 for i in (
 status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim, status_games, status_about, status_lab):
     if i[1] != "ok":
-        msg = i[0], " : is down !"
+        msg = i[0], ":warning: : is down !"
         st.write(msg)
 
 # Versions
