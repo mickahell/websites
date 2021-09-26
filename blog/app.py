@@ -20,3 +20,6 @@ POSTS = function.get_articles()
 
 for i in POSTS:
     i.preview()
+
+st.write("---")
+function.author()

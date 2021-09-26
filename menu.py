@@ -84,6 +84,7 @@ def menu_main():
             <a href="http://blog.xtraorbitals.xyz"><b>Blog</b></a>
             <a class="separateur" <b>|</b></a>
             <a href="http://about.xtraorbitals.xyz"><b>About</b></a>
+            <a href="https://github.com/mickahell"><b>GitHub</b></a>
         </div>
     """
     st.markdown(menu, unsafe_allow_html=True)

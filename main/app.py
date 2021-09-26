@@ -114,7 +114,7 @@ status_blog = isrunning("https://blog.xtraorbitals.xyz/")
 status_museum = isrunning("https://beta-museum.xtraorbitals.xyz/")
 
 for i in (
-status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim, status_games, status_about, status_lab):
+        status_qiskit, status_penny, status_cirq, status_qpokemon, status_qnim, status_games, status_about, status_lab):
     if i[1] != "ok":
         msg = i[0], ":warning: : is down !"
         st.write(msg)
@@ -141,3 +141,16 @@ journey
             section qMaths
 </div>
 """, height=600, scrolling=False)
+
+# Author
+st.write("---")
+col0, col1 = st.columns([1, 10])
+col0.image('posts/ressources/IMG_1574.png', output_format='PNG', use_column_width=True)
+col1.write("""
+__Michaël Rollin__ : <div style='color:grey'>System engineer & Qiskit Advocate</div>
+                    I create quantum autom processes and tools for IT engineering.  
+                    <img src='https://raw.githubusercontent.com/AkashGutha/Qiskit-Snippets/master/assets/qiskit.gif' width="32"/>
+                    [![GitHub](https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/blog/posts/ressources/github.png)](https://github.com/mickahell)
+                    [![LinkedIn](https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/blog/posts/ressources/linkedin.png)](https://www.linkedin.com/in/michaelrollin/)
+                    [![Twitter](https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/blog/posts/ressources/twitter.png)](https://twitter.com/mickahell89700)
+""", unsafe_allow_html=True)
