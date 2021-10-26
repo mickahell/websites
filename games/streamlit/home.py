@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime
+import io
 import plotly.graph_objects as go
 
 
@@ -27,8 +28,9 @@ def app():
     date_csv = []
 
     ## Qpokemon
-    file_csv = 'stats/qpokemon_results.csv'
-    csv_file = pd.read_csv(file_csv, header=None)
+    r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qpokemon_results.csv')
+    file_csv = io.StringIO(r.text)
+    csv_file = pd.read_csv(filepath_or_buffer=file_csv, header=None)
 
     for i in range(len(csv_file[0])):
         robot_csv.append(csv_file[0][i])
@@ -36,8 +38,9 @@ def app():
         date_csv.append(datetime.datetime.strptime(csv_file[2][i], '%m-%Y').date())
 
     ## Qnim
-    file_csv = 'stats/qnim_results.csv'
-    csv_file = pd.read_csv(file_csv, header=None)
+    r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qnim_results.csv')
+    file_csv = io.StringIO(r.text)
+    csv_file = pd.read_csv(filepath_or_buffer=file_csv, header=None)
 
     ## Fusion
     compteur = 0
