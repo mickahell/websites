@@ -51,15 +51,16 @@ def app():
 
     #############################################################
     # Graph
-    file_csv = 'stats/qpokemon_results.csv'
-
+    r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qpokemon_results.csv')
+    file_csv = io.StringIO(r.text)
+    
     robot_csv = []
     human_csv = []
     robot_evo_csv = []
     human_evo_csv = []
     date_csv = []
 
-    csv_file = pd.read_csv(file_csv, header=None)
+    csv_file = pd.read_csv(filepath_or_buffer=file_csv, header=None)
 
     for i in range(len(csv_file[0])):
         robot_csv.append(csv_file[0][i])
