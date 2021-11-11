@@ -24,6 +24,7 @@ def app():
 
     robot_evo_csv = []
     human_evo_csv = []
+    date_csv = []
 
     ## Qpokemon
     r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qpokemon_results.csv')
@@ -32,21 +33,28 @@ def app():
 
     robot_csv = csv_file["robot"].tolist()
     human_csv = csv_file["human"].tolist()
-    date_csv = datetime.datetime.strptime(csv_file["date"].tolist(), '%m-%Y').date())
+    date_csv_temp = csv_file["date"].tolist()
+
+    for i in range(len(date_csv_temp)):
+        date_csv.append(datetime.datetime.strptime(date_csv_temp[i], '%m-%Y').date())
 
     ## Qnim
     r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qnim_results.csv')
     file_csv = io.StringIO(r.text)
     csv_file = pd.read_csv(filepath_or_buffer=file_csv)
-    
+
     qnim_robot_csv = csv_file["robot"].tolist()
     qnim_human_csv = csv_file["human"].tolist()
-    qnim_date_csv = datetime.datetime.strptime(csv_file["date"].tolist(), '%m-%Y').date())
+    qnim_date_csv_temp = csv_file["date"].tolist()
+    qnim_date_csv = []
+
+    for i in range(len(qnim_date_csv_temp)):
+        qnim_date_csv.append(datetime.datetime.strptime(qnim_date_csv_temp[i], '%m-%Y').date())
 
     ## Fusion
     compteur = 0
     for i in qnim_date_csv:
-        temp_date = datetime.datetime.strptime(i, '%m-%Y').date()
+        temp_date = i
         if temp_date in date_csv:
             compteur_bis = 0
             for u in date_csv:

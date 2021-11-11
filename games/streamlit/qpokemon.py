@@ -55,9 +55,7 @@ def app():
     # Graph
     r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qpokemon_results.csv')
     file_csv = io.StringIO(r.text)
-    
-    robot_csv = []
-    human_csv = []
+
     robot_evo_csv = []
     human_evo_csv = []
     date_csv = []
@@ -66,7 +64,10 @@ def app():
     
     robot_csv = csv_file["robot"].tolist()
     human_csv = csv_file["human"].tolist()
-    date_csv = datetime.datetime.strptime(csv_file["date"].tolist(), '%m-%Y').date())
+    date_csv_temp = csv_file["date"].tolist()
+
+    for i in range(len(date_csv_temp)):
+        date_csv.append(datetime.datetime.strptime(date_csv_temp[i], '%m-%Y').date())
 
     for i in range(len(robot_csv)):
         robot_evo_csv.append(robot_csv[i] / (human_csv[i] + robot_csv[i]) * 100)
