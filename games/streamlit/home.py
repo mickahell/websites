@@ -22,41 +22,41 @@ def app():
     #############################################################
     # Graph
 
-    robot_csv = []
-    human_csv = []
     robot_evo_csv = []
     human_evo_csv = []
-    date_csv = []
 
     ## Qpokemon
     r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qpokemon_results.csv')
     file_csv = io.StringIO(r.text)
-    csv_file = pd.read_csv(filepath_or_buffer=file_csv, header=None)
+    csv_file = pd.read_csv(filepath_or_buffer=file_csv)
 
-    for i in range(len(csv_file[0])):
-        robot_csv.append(csv_file[0][i])
-        human_csv.append(csv_file[1][i])
-        date_csv.append(datetime.datetime.strptime(csv_file[2][i], '%m-%Y').date())
+    robot_csv = csv_file["robot"].tolist()
+    human_csv = csv_file["human"].tolist()
+    date_csv = csv_file["date"].tolist()
 
     ## Qnim
     r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qnim_results.csv')
     file_csv = io.StringIO(r.text)
-    csv_file = pd.read_csv(filepath_or_buffer=file_csv, header=None)
+    csv_file = pd.read_csv(filepath_or_buffer=file_csv)
+    
+    qnim_robot_csv = csv_file["robot"].tolist()
+    qnim_human_csv = csv_file["human"].tolist()
+    qnim_date_csv = csv_file["date"].tolist()
 
     ## Fusion
     compteur = 0
-    for i in csv_file[2]:
+    for i in qnim_date_csv:
         temp_date = datetime.datetime.strptime(i, '%m-%Y').date()
         if temp_date in date_csv:
             compteur_bis = 0
             for u in date_csv:
                 if u == temp_date:
-                    robot_csv[compteur_bis] += csv_file[0][compteur]
-                    human_csv[compteur_bis] += csv_file[1][compteur]
+                    robot_csv[compteur_bis] += qnim_robot_csv[compteur]
+                    human_csv[compteur_bis] += qnim_human_csv[compteur]
                 compteur_bis += 1
         else:
-            robot_csv.append(csv_file[0][compteur])
-            human_csv.append(csv_file[1][compteur])
+            robot_csv.append(qnim_robot_csv[compteur])
+            human_csv.append(qnim_human_csv[compteur])
 
             date_csv.append(temp_date)
         compteur += 1
