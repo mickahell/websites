@@ -32,7 +32,7 @@ def app():
 
     robot_csv = csv_file["robot"].tolist()
     human_csv = csv_file["human"].tolist()
-    date_csv = csv_file["date"].tolist()
+    date_csv = datetime.datetime.strptime(csv_file["date"].tolist(), '%m-%Y').date())
 
     ## Qnim
     r = requests.get('https://raw.githubusercontent.com/mickahell/robots-data/main/games/stats/qnim_results.csv')
@@ -41,7 +41,7 @@ def app():
     
     qnim_robot_csv = csv_file["robot"].tolist()
     qnim_human_csv = csv_file["human"].tolist()
-    qnim_date_csv = csv_file["date"].tolist()
+    qnim_date_csv = datetime.datetime.strptime(csv_file["date"].tolist(), '%m-%Y').date())
 
     ## Fusion
     compteur = 0
