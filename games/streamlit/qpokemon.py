@@ -62,14 +62,15 @@ def app():
     human_evo_csv = []
     date_csv = []
 
-    csv_file = pd.read_csv(filepath_or_buffer=file_csv, header=None)
+    csv_file = pd.read_csv(filepath_or_buffer=file_csv)
+    
+    robot_csv = csv_file["robot"].tolist()
+    human_csv = csv_file["human"].tolist()
+    date_csv = datetime.datetime.strptime(csv_file["date"].tolist(), '%m-%Y').date())
 
-    for i in range(len(csv_file[0])):
-        robot_csv.append(csv_file[0][i])
-        human_csv.append(csv_file[1][i])
-        robot_evo_csv.append(csv_file[0][i] / (csv_file[1][i] + csv_file[0][i]) * 100)
-        human_evo_csv.append(csv_file[1][i] / (csv_file[1][i] + csv_file[0][i]) * 100)
-        date_csv.append(datetime.datetime.strptime(csv_file[2][i], '%m-%Y').date())
+    for i in range(len(robot_csv)):
+        robot_evo_csv.append(robot_csv[i] / (human_csv[i] + robot_csv[i]) * 100)
+        human_evo_csv.append(human_csv[i] / (human_csv[i] + robot_csv[i]) * 100)
 
     left_column, right_column = st.columns(2)
 
