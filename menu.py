@@ -28,14 +28,6 @@ def css():
                 background-color: #ddd;
                 color: black;}
 
-            .header a.separateur {
-                background-color: #000;
-                color: white;}
-
-            .header a.active {
-                background-color: #FFF;
-                color: black;}
-
             .logo a {
                 color: black;
                 position: fixed;
@@ -68,23 +60,13 @@ def menu_app():
 
 
 def menu_main():
-    # Menu
-    menu = """
-        <div class="logo">
-            <a href="https://xtraorbitals.xyz">
-                <img src="https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/logo.png"/>
-            </a>
-        </div>
-        <div class="header">
-            <a class="active" href="http://xtraorbitals.xyz"><b>Home</b></a>
-            <a href="http://quantum-lab.xtraorbitals.xyz"><b>Lab</b></a>
-            <a href="http://games.xtraorbitals.xyz"><b>Games</b></a>
-            <a href="http://beta-museum.xtraorbitals.xyz"><b>Beta Museum</b></a>
-            <a class="separateur" <b>|</b></a>
-            <a href="http://blog.xtraorbitals.xyz"><b>Blog</b></a>
-            <a class="separateur" <b>|</b></a>
-            <a href="http://about.xtraorbitals.xyz"><b>About</b></a>
-            <a href="https://github.com/mickahell"><b>GitHub</b></a>
-        </div>
-    """
-    st.markdown(menu, unsafe_allow_html=True)
+    st.sidebar.write("# Menu")
+    st.sidebar.write("## Apps")
+    with st.sidebar.expander("", True):
+        st.write("""
+            ▶︎ 🧪 **[Lab](https://quantum-lab.xtraorbitals.xyz)**  
+            ▶︎ 🕹 **[Games](https://games.xtraorbitals.xyz)**  
+            ▶︎ 🎭 **[Beta Museum](https://beta-museum.xtraorbitals.xyz)**
+            """)
+    st.sidebar.write("""▶︎ 🗞 **[Blog](https://blog.xtraorbitals.xyz)**""")
+    st.sidebar.write("""▶︎ **[About](https://about.xtraorbitals.xyz)**""")

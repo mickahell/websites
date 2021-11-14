@@ -32,44 +32,6 @@ here = """
 """
 st.markdown(here)
 
-# col0, col1, col2, col3 = st.columns(4)
-# lab = col0.expander("Laboratories", True)
-# lab.write("""
-#     The laboratory is a place for Jupyter apps and tuto on how to Dockerize quantum apps.
-#     <form action="https://quantum-lab.xtraorbitals.xyz">
-#         <input type="submit" value="Quantum Lab" />
-#     </form>
-#     <br />
-# """, unsafe_allow_html=True)
-#
-# games = col1.expander("Games", True)
-# games.write("""
-#     Place for testing and playing games against robots. Will you succeed to win ?!
-#     <form action="https://games.xtraorbitals.xyz">
-#         <input type="submit" value="Games" />
-#     </form>
-#     <br />
-# """, unsafe_allow_html=True)
-#
-# museum = col2.expander("Museum", False)
-# museum.write("""
-#     Where science and art are ONE !
-#     <br />
-# """, unsafe_allow_html=True)
-#
-# about = col3.expander("About", True)
-# about.write("""
-#     Everything you always wanted to know without daring to ask, about here.
-#     <form action="https://about.xtraorbitals.xyz">
-#         <input type="submit" value="About" />
-#     </form>
-#     <br />
-# """, unsafe_allow_html=True)
-
-## Tag cloud
-# Create some sample text
-# text = 'Quantum, games, AI, robots, pokemon, lab, python, qiskit, pennylane, fractals, fun'
-
 blog_posts = """
     ## Latest blog posts
 """
