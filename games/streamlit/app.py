@@ -2,7 +2,7 @@ import streamlit as st
 import home
 import qnim
 import qpokemon
-from common import common
+import common
 
 st.set_page_config(page_title="Games", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 

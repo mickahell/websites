@@ -1,5 +1,5 @@
 import streamlit as st
-from common import common
+import common
 import function
 
 

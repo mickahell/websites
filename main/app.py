@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import requests
 from requests.structures import CaseInsensitiveDict
-from common import common
+import common
 
 
 def isrunning(url):

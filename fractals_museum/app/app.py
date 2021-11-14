@@ -1,7 +1,7 @@
 # App control
 import streamlit as st
 import home
-from common import common
+import common
 import perso_fractal
 import study_result
 

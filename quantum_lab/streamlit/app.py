@@ -2,7 +2,7 @@ import streamlit as st
 import quantum_lab
 import quantum_app
 import article
-from common import common
+import common
 
 st.set_page_config(page_title="Online Quantum Lab", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
