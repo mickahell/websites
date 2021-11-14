@@ -1,12 +1,12 @@
 import streamlit as st
-import menu
+from common import common
 import function
 
 
 st.set_page_config(page_title="Blog", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
-menu.css()
-menu.menu_app()
+common.css()
+common.menu_app()
 
 title = """
 <div align="center">
@@ -22,4 +22,4 @@ for i in POSTS:
     i.preview()
 
 st.write("---")
-function.author()
+common.author()

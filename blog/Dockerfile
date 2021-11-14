@@ -21,7 +21,7 @@ RUN apt-get update -yq \
 && apt-get install python3-pip -y
 
 ADD blog/ /opt/blog/
-ADD menu.py /opt/blog/
+ADD common/common.py /opt/blog/
 
 ADD blog/start.sh .
 

@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import requests
 from requests.structures import CaseInsensitiveDict
-import menu
+from common import common
 
 
 def isrunning(url):
@@ -15,8 +15,8 @@ def isrunning(url):
 
 st.set_page_config(page_title="Xtra Orbitals", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
-menu.css()
-menu.menu_main()
+common.css()
+common.menu_main()
 
 title = """
     <div align="center">
@@ -105,14 +105,4 @@ journey
 """, height=600, scrolling=False)
 
 # Author
-st.write("---")
-col0, col1 = st.columns([1, 10])
-col0.image('ressources/IMG_1574.png', output_format='PNG', use_column_width=True)
-col1.write("""
-__Michaël Rollin__ : <div style='color:grey'>System engineer & Qiskit Advocate</div>
-                    I create quantum autom processes and tools for IT engineering.  
-                    <img src='https://raw.githubusercontent.com/AkashGutha/Qiskit-Snippets/master/assets/qiskit.gif' width="32"/>
-                    [![GitHub](https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/blog/posts/ressources/github.png)](https://github.com/mickahell)
-                    [![LinkedIn](https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/blog/posts/ressources/linkedin.png)](https://www.linkedin.com/in/michaelrollin/)
-                    [![Twitter](https://raw.githubusercontent.com/mickahell/xtraorbitals.xyz/main/blog/posts/ressources/twitter.png)](https://twitter.com/mickahell89700)
-""", unsafe_allow_html=True)
+common.author()

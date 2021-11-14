@@ -1,15 +1,15 @@
 # App control
 import streamlit as st
 import home
-import menu
+from common import common
 import perso_fractal
 import study_result
 
 
 st.set_page_config(page_title="Beta : Fractals Museum", page_icon=":art:", layout='wide', initial_sidebar_state='auto')
 
-menu.css()
-menu.menu_app()
+common.css()
+common.menu_app()
 
 PAGES = {
     "Home": home,

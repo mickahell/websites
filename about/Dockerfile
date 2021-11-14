@@ -21,7 +21,7 @@ RUN apt-get update -yq
 RUN pip install streamlit
 
 ADD about/ /opt/about/
-ADD menu.py /opt/about/
+ADD common/common.py /opt/about/
 
 ADD about/start.sh .
 

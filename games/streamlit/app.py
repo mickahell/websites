@@ -2,12 +2,12 @@ import streamlit as st
 import home
 import qnim
 import qpokemon
-import menu
+from common import common
 
 st.set_page_config(page_title="Games", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
-menu.css()
-menu.menu_app()
+common.css()
+common.menu_app()
 
 title = """
 <div align="center">

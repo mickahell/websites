@@ -70,3 +70,16 @@ def menu_main():
             """)
     st.sidebar.write("""▶︎ 🗞 **[Blog](https://blog.xtraorbitals.xyz)**""")
     st.sidebar.write("""▶︎ **[About](https://about.xtraorbitals.xyz)**""")
+
+
+def author():
+    col0, col1 = st.columns([1, 10])
+    col0.image('https://raw.githubusercontent.com/mickahell/mickahell/main/resources/profile.png', output_format='PNG', use_column_width=True)
+    col1.write("""
+    __Michaël Rollin__ : <div style='color:grey'>System engineer & Qiskit Advocate</div>
+                        I create quantum autom processes and tools for IT engineering.  
+                        <img src='https://raw.githubusercontent.com/AkashGutha/Qiskit-Snippets/master/assets/qiskit.gif' width="32"/>
+                        [![GitHub](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/github.png)](https://github.com/mickahell)
+                        [![LinkedIn](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/linkedin.png)](https://www.linkedin.com/in/michaelrollin/)
+                        [![Twitter](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/twitter.png)](https://twitter.com/mickahell89700)
+    """, unsafe_allow_html=True)

@@ -22,7 +22,7 @@ RUN pip install streamlit plotly
 
 
 ADD games/streamlit/ /opt/games/
-ADD menu.py /opt/games/
+ADD common/common.py /opt/games/
 
 ADD games/streamlit/start.sh .
 

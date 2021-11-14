@@ -2,12 +2,12 @@ import streamlit as st
 import quantum_lab
 import quantum_app
 import article
-import menu
+from common import common
 
 st.set_page_config(page_title="Online Quantum Lab", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
-menu.css()
-menu.menu_app()
+common.css()
+common.menu_app()
 
 PAGES = {
     "Online Quantum Lab": quantum_lab,

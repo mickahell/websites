@@ -20,7 +20,7 @@ LABEL org.opencontainers.image.title="Quantum Museum" \
 RUN apt-get update -yq
 
 ADD fractals_museum/app/ /opt/museum/
-ADD menu.py /opt/museum/
+ADD common/common.py /opt/museum/
 
 ADD fractals_museum/start.sh .
 

@@ -17,3 +17,7 @@ def menu_app():
 
 def menu_main():
     pass
+
+
+def author():
+    pass
