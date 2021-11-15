@@ -34,6 +34,5 @@ RUN tar -xf /opt/qpokemon/3.10.tar.gz -C /opt/qpokemon/ && \
     mv /opt/qpokemon/quantum_pokemon-fight-* /opt/qpokemon/quantum_pokemon-fight
 
 EXPOSE 7681
-VOLUME /opt/qpokemon/quantum_pokemon-fight/stats
 
 CMD ./start.sh
