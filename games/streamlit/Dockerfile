@@ -27,6 +27,5 @@ ADD common/common.py /opt/games/
 ADD games/streamlit/start.sh .
 
 EXPOSE 8501
-VOLUME /opt/games/stats
 
 CMD ./start.sh
