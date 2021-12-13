@@ -21,6 +21,8 @@ RUN apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev jq
     cd ttyd && mkdir build && cd build && \
     cmake .. && \
     make && make install
+    
+RUN pip3 install qiskit_optimization
 
 ADD games/qnim-game /opt/qnim/
 
