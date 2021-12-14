@@ -127,7 +127,7 @@ def app():
     qnim.write(qnim_view, unsafe_allow_html=True)
     st.write("<h3>See on <a href='https://qnim-game.xtraorbitals.xyz'><b>QNim game page</b></a></h3>", unsafe_allow_html=True)
     badge = """
-    [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Quantronauts/quantum_Nim-game)](https://github.com/Quantronauts/quantum_Nim-game/releases)
+    [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mickahell/quantum_Nim-game)](https://github.com/mickahell/quantum_Nim-game/releases)
     """
     st.markdown(badge)
 
