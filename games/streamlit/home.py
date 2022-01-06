@@ -6,6 +6,11 @@ import requests
 import plotly.graph_objects as go
 
 
+def info():
+    page_name = "home"
+    return page_name
+
+
 def app():
     home_page = """
     <div align="center">

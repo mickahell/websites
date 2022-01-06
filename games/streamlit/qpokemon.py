@@ -6,6 +6,11 @@ import requests
 import plotly.graph_objects as go
 
 
+def info():
+    page_name = "qpokemon"
+    return page_name
+
+
 def app():
     st.write("# Quantum Pokémon fight")
 
