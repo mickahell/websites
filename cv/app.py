@@ -92,6 +92,3 @@ with st.sidebar:
 # Publications
 
 # Projects
-
-# Author
-common.author()
