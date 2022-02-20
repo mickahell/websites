@@ -1,112 +1,97 @@
 import streamlit as st
+from PIL import Image
+import urllib.request
+import function
+import common
+
+# import profile
+# import exp
+# import education
+# import hobbies
+# import extra
 
 st.set_page_config(page_title="CV", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
-css = """
-    <style>
-        #MainMenu {visibility: hidden;}
-        footer::before {content:'Xtra Orbitals™️ | Since 2021 | ';}
+common.css()
 
-        .header{
-            background: #555;
-            color: #f1f1f1; 
-            position: fixed;
-            top: 0;} 
-
-        .header {
-            overflow: hidden;
-            background-color: #333;}
-
-        .header a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 10px 16px;
-            text-decoration: none;
-            font-size: 15px;}
-
-        .header a:hover {
-            background-color: #ddd;
-            color: black;}
-
-        .header a.separateur {
-            background-color: #000;
-            color: white;}
-
-        .header a.active {
-            background-color: #FFF;
-            color: black;}
-    </style>
+title = """
+<div align="center">
+    <h1>CV</h1>
+</div>
+<br /><br />
 """
-st.markdown(css, unsafe_allow_html=True)
+st.markdown(title, unsafe_allow_html=True)
 
-# Menu
-menu = """
-    <div class="header">
-        <a class="active" href="http://xtraorbitals.xyz"><b>Home</b></a>
-        <a href="http://quantum-lab.xtraorbitals.xyz"><b>Lab</b></a>
-        <a href="http://games.xtraorbitals.xyz"><b>Games</b></a>
-        <a class="separateur" <b>|</b></a>
-        <a href="http://about.xtraorbitals.xyz"><b>About</b></a>
-    </div>
-"""
-st.markdown(menu, unsafe_allow_html=True)
+# Init var
+base_url = "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/"
+data_page = ["index", "info", "experiences", "education", "publications", "projects"]
 
-col1, col2 = st.sidebar.beta_columns(2)
-col1.image('data/IMG_1574.png')
+# Download json
+## to put in cache
+index = function.dl_json(base_url, data_page[0])
+info = function.dl_json(base_url, data_page[1])
+exp = function.dl_json(base_url, data_page[2])
+edu = function.dl_json(base_url, data_page[3])
+publi = function.dl_json(base_url, data_page[4])
+projects = function.dl_json(base_url, data_page[5])
+urllib.request.urlretrieve(info["info"]["photo_url"], "data/profile.png")
+photo_profile = Image.open("data/profile.png")
 
-st.sidebar.markdown(
-    """
-    # Michael Rollin  
-    27 years old  
-    [email](mailto:michael.rollin@orange.fr)  
-    [GitHub](https://github.com/mickahell)  
-    [Twitter](https://twitter.com/mickahell89700)  
-    [Linkedin](https://www.linkedin.com/in/michaelrollin/)  
-    ### Navigation
-    [Experiences](#exp)  
-    [Education](#education)  
-    [Certifications](#certification)  
-    [IT skills](#skills)  
-    [Hobbies](#hobbies)  
-    [Science Publications](#publi)
-    """
-)
+# Calcul index
+print(info["info"]["socials"][0])
 
-content = """
-## Curiculum vitae
-### Experiences <a class="anchor" id="exp"></a>
-- July 2018 to Today ; System Engineer - Orange by Altran - Sophia-Antipolis, France
-Admin system responsible of the production servers for project Meta. Project about to getting and processing every metadata of the Orange TV.
-  - Dockeurisation of the metadata processing system
-  - Migration from a physical architecture to a virtual architecture in the cloud with Docker Swarm
-  - Development of a new architecture un microservices
-  - Processus automatisation with Ansible
-  
-- June 2017 to June 2019 ; Web Project Administrator - Erasmus Student Network France
-Responsible of the IT strategic and of the IT prokect of the head NGO ESN France.
-  - Responsible of the European project [Buddy System](https://buddysystem.eu/fr/the-project)
-  - Development of plateforms : intranet, webshop, ...
-  
-- March 2017 to September 2017 ; Cybersecurity Engineer - Ekium, Lyon
-Development of a cybersecurity architecture with a supervision system for a seawater desalination plant in Oman.
+# Profile
+profile = info["info"]
+socials = info["info"]["socials"][0]
+with st.sidebar:
+    # Personal info
+    st.image(photo_profile, output_format='PNG', use_column_width=True)
+    st.title(profile["first_name"] + " " + profile["last_name"])
+    st.write("### " + profile["title"])
+    st.write("Country : " + profile["country"])
+    st.write("📧 : " + profile["email"])
+    st.write("🔗 : " + profile["website"])
 
-### Education <a class="anchor" id="education"></a>
-- 2016 -- 2017 ; Master 2 - ESAIP Dijon IT project management
-- 2016 ; Master 1 - LaSalle Cuernavaca (Mexico) Cibernética
-- 2015 ; Licence 3 - Politechnika Varsovie (Poland) Electrical Engineering
-- 2014 ; BTS St Joseph Dijon Electronics systems
+    # Socials
+    github_md = "[![GitHub](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/github.png)](" + \
+                socials["github_url"] + ")"
+    linkedin_md = "[![Linkedin](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/linkedin.png)](" + \
+                  socials["linkedin_url"] + ")"
+    scholar_md = "[![Linkedin](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/scholar.png)](" + \
+                  socials["scholar_url"] + ")"
+    st.write(github_md + " " + linkedin_md + " " + scholar_md)
 
-### Certifications <a class="anchor" id="certification"></a>
+    # Skills
+    st.write("## Skills")
+    for i in profile["skills"]:
+        with st.expander(i["category"], False):
+            for y in i["list"]:
+                st.write("▶ " + y)
+    # Languages
+    st.write("## Languages")
+    for i in profile["languages"]:
+        if "native" in i["level"]:
+            st.write(i["name"] + " : " + i["level"])
+        else:
+            level = ""
+            grade = " - " + i["diploma"] if i["diploma"] is not None else ""
+            for u in i["level"]:
+                level = level + "⭑"
+            st.write(i["name"] + " : " + level + grade)
 
-### IT skills <a class="anchor" id="skills"></a>
-_ **OS** : Ubuntu, CentOS, Windows Server 2008 / 2012 R2
-_ **Coding** : Python, C++, QISkit, Pennylane
-_ **Admin. services** : Docker, Swarm, Ansible, GitLab, Vmware
-_ **Electronic** : MPLAB, PCAD, MATLAB
-_ **English** : -- Toeic 795 / 990        **Spanish** : 
+    # Hobbies
+    st.write("## Hobbies")
+    for i in profile["hobbies"]:
+        st.write(i)
 
-### Hobbies <a class="anchor" id="hobbies"></a>
-### Science Publications <a class="anchor" id="publi"></a>
-"""
-st.markdown(content, unsafe_allow_html=True)
+
+# Experiences
+
+# Education
+
+# Publications
+
+# Projects
+
+# Author
+common.author()

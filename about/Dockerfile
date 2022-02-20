@@ -1,4 +1,4 @@
-FROM mickahell/quantum_lab_qiskit:latest
+FROM ubuntu:20.04
 
 # Var for labels
 ARG GITHUB_ACTOR
@@ -14,7 +14,7 @@ LABEL org.opencontainers.image.title="About" \
       org.opencontainers.image.source="https://github.com/mickahell/websites/about" \
       org.opencontainers.image.url="https://github.com/mickahell/websites/tags" \
       org.opencontainers.image.description="xtra Orbitals" \
-      org.opencontainers.image.os="Ubuntu Bionic" \
+      org.opencontainers.image.os="Ubuntu Focal" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq

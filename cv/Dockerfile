@@ -1,4 +1,4 @@
-FROM mickahell/quantum_lab_qiskit:latest
+FROM ubuntu:20.04
 
 # Var for labels
 ARG GITHUB_ACTOR
@@ -21,6 +21,7 @@ RUN apt-get update -yq
 RUN pip install streamlit
 
 ADD cv/ /opt/cv/
+
 ADD start.sh .
 
 EXPOSE 8501
