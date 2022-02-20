@@ -57,7 +57,7 @@ with st.sidebar:
                 socials["github_url"] + ")"
     linkedin_md = "[![Linkedin](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/linkedin.png)](" + \
                   socials["linkedin_url"] + ")"
-    scholar_md = "[![Linkedin](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/scholar.png)](" + \
+    scholar_md = "[![Scholar](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/scholar.png)](" + \
                   socials["scholar_url"] + ")"
     st.write(github_md + " " + linkedin_md + " " + scholar_md)
 
