@@ -5,7 +5,7 @@ import json
 def dl_json(base_url: str, page: str) -> json:
     """Get json from url
     Args:
-        base_url : base of the url
+        base_url: base of the url
         page: name of the page
     Return: json
     """

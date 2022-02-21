@@ -2,10 +2,21 @@ import streamlit as st
 
 
 def css():
-    css = """
+    """CSS basic page
+    Arg: Nothing
+    Return: Nothing
+    """
+    title = """
+    <div align="center">
+        <h1>CV</h1>
+    </div>
+    <br /><br />
+    """
+    st.markdown(title, unsafe_allow_html=True)
+    footer = """
         <style>
             #MainMenu {visibility: hidden;}
             footer::before {content:'Xtra Orbitals™️ | Since 2021 | ';}
         </style>
     """
-    st.markdown(css, unsafe_allow_html=True)
+    st.markdown(footer, unsafe_allow_html=True)

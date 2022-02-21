@@ -14,43 +14,39 @@ st.set_page_config(page_title="CV", page_icon=":space_invader:", layout='wide', 
 
 common.css()
 
-title = """
-<div align="center">
-    <h1>CV</h1>
-</div>
-<br /><br />
-"""
-st.markdown(title, unsafe_allow_html=True)
-
 # Init var
-base_url = "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/"
-data_page = ["index", "info", "experiences", "education", "publications", "projects"]
+base_url = "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/english/"
+index_page = "index"
 
 # Download json
-## to put in cache
-index = function.dl_json(base_url, data_page[0])
-info = function.dl_json(base_url, data_page[1])
-exp = function.dl_json(base_url, data_page[2])
-edu = function.dl_json(base_url, data_page[3])
-publi = function.dl_json(base_url, data_page[4])
-projects = function.dl_json(base_url, data_page[5])
+# to put in cache
+# Calcul index
+index = function.dl_json(base_url, index_page)
+db = index["index"]
+# Calcul entire pages
+info = function.dl_json(base_url, db["info"]["key"])
+exp = function.dl_json(base_url, db["experiences"]["key"])
+edu = function.dl_json(base_url, db["education"]["key"])
+publi = function.dl_json(base_url, db["publications"]["key"])
+projects = function.dl_json(base_url, db["projects"]["key"])
+# Profile pic
 urllib.request.urlretrieve(info["info"]["photo_url"], "data/profile.png")
 photo_profile = Image.open("data/profile.png")
 
-# Calcul index
-print(info["info"]["socials"][0])
+# Debug
+print(info["info"]["socials"])
 
 # Profile
 profile = info["info"]
-socials = info["info"]["socials"][0]
+socials = info["info"]["socials"]
 with st.sidebar:
     # Personal info
     st.image(photo_profile, output_format='PNG', use_column_width=True)
     st.title(profile["first_name"] + " " + profile["last_name"])
     st.write("### " + profile["title"])
     st.write("Country : " + profile["country"])
-    st.write("📧 : " + profile["email"])
-    st.write("🔗 : " + profile["website"])
+    st.write(":email: : " + profile["email"])
+    st.write(":link: : " + profile["website"])
 
     # Socials
     github_md = "[![GitHub](https://raw.githubusercontent.com/mickahell/mickahell/main/resources/github.png)](" + \
@@ -92,3 +88,4 @@ with st.sidebar:
 # Publications
 
 # Projects
+
