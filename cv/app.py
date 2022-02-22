@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import urllib.request
+from pages import exp
 import function
 import common
 
@@ -82,6 +83,8 @@ with st.sidebar:
 
 
 # Experiences
+with st.container():
+    exp.exp(json=exp, base_url=base_url)
 
 # Education
 
