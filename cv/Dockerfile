@@ -17,12 +17,15 @@ LABEL org.opencontainers.image.title="Curriculum Vitae" \
       org.opencontainers.image.os="Ubuntu Focal" \
       org.opencontainers.image.version=${GITHUB_REF}
 
-RUN apt-get update -yq
-RUN pip install streamlit
+RUN apt-get update -yq \
+&& apt-get install python3-pip -y
 
 ADD cv/ /opt/cv/
 
 ADD cv/start.sh .
+
+RUN pip3 install --upgrade pip setuptools
+RUN pip3 install -r /opt/blog/requirements.txt
 
 EXPOSE 8501
 
