@@ -25,7 +25,7 @@ ADD cv/ /opt/cv/
 ADD cv/start.sh .
 
 RUN pip3 install --upgrade pip setuptools
-RUN pip3 install -r /opt/blog/requirements.txt
+RUN pip3 install -r /opt/cv/requirements.txt
 
 EXPOSE 8501
 
