@@ -66,6 +66,14 @@ if projects_box:
     with st.container():
         projects.projects(json_data=projec)
 
+# PDF access
+st.sidebar.write("---")
+cv_fr = "<form action=" + db["resume_fr"] + "><input type='submit' value='FR: CV pdf' /></form>"
+cv_en = "<form action=" + db["resume_en"] + "><input type='submit' value='EN: Resume pdf' /></form>"
+cvfr_col, cven_col = st.sidebar.columns(2)
+cvfr_col.write(cv_fr, unsafe_allow_html=True)
+cven_col.write(cv_en, unsafe_allow_html=True)
+
 # Clear cache
 st.sidebar.write("---")
 if st.sidebar.button("Clear cache !"):
