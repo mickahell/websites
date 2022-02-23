@@ -1,16 +1,11 @@
 import streamlit as st
 from PIL import Image
 import urllib.request
-from pages import exp
-from pages import edu
+from pages import experiences
+from pages import education
+from pages import publications
 import function
 import common
-
-# import profile
-# import exp
-# import education
-# import hobbies
-# import extra
 
 st.set_page_config(page_title="CV", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
 
@@ -85,16 +80,19 @@ with st.sidebar:
 
 # Experiences
 with st.container():
-    exp.exp(json=exp, base_url=base_url)
+    experiences.exp(json=exp, base_url=base_url)
 
 # Education
 with st.container():
-    edu.edu(json=edu)
-    
+    education.edu(json=edu)
 with st.container():
-    edu.cert(json=edu)
+    education.cert(json=edu)
 
 # Publications
+with st.container():
+    publications.publi(json=publi)
+with st.container():
+    publications.blog(json=publi)
 
 # Projects
 
