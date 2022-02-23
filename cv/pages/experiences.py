@@ -4,18 +4,17 @@ import io
 import requests
 
 
-def exp(json: json, base_url: str):
+def exp(json_data: json, base_url: str):
     """Show experiences
     Arg:
       json: json of the page experiences
     Return: nothing
     """
     st.write("## Experiences")
-    switch_col = False
     right_col, left_col = st.columns(2)
     line_container = st.container()
 
-    for i, elem in enumerate(json["experiences"]):
+    for i, elem in enumerate(json_data["experiences"]):
         if i % 2 == 0:
             line_container = st.container()
             right_col, empty, left_col = st.columns([10, 1, 10])
@@ -43,7 +42,7 @@ def exp(json: json, base_url: str):
                 # Technos
                 list_tech = ""
                 for tech in elem["technologies"]:
-                    list_tech = list_tech + ", " + tech
+                    list_tech = tech + ", " + list_tech
                 st.write("**Technologies used** : " + list_tech)
         if i % 2 == 0:
             st.write("---")

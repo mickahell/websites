@@ -8,7 +8,7 @@ def css():
     """
     title = """
     <div align="center">
-        <h1>CV</h1>
+        <h1>Resume</h1>
     </div>
     <br /><br />
     """

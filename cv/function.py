@@ -1,7 +1,10 @@
+import streamlit as st
 import urllib.request
 import json
+from PIL import Image
 
 
+@st.experimental_memo
 def dl_json(base_url: str, page: str) -> json:
     """Get json from url
     Args:
@@ -14,3 +17,17 @@ def dl_json(base_url: str, page: str) -> json:
         return_json = json.loads(url.read().decode())
 
     return return_json
+
+
+@st.experimental_memo
+def dl_img(img_url: str, dest: str) -> Image:
+    """Get image from url
+    Args:
+        img_url: url of the image
+        dest: dest to register the image
+    Return: Image
+    """
+    urllib.request.urlretrieve(img_url, dest)
+    return_img = Image.open(dest)
+
+    return return_img
