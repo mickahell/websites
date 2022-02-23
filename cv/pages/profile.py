@@ -4,8 +4,13 @@ from PIL import Image
 
 
 def profile(json_data: json, _photo_profile: Image):
-    profile_json = json_data["info"]
-    socials = json_data["info"]["socials"]
+    """Show profile
+        Arg:
+          json: json of the page profile
+        Return: nothing
+        """
+    profile_json = json_data["profile"]
+    socials = json_data["profile"]["socials"]
     with st.sidebar:
         # Personal info
         st.image(_photo_profile, output_format='PNG', use_column_width=True)

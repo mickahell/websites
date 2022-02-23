@@ -21,24 +21,25 @@ index_page = "index"
 index = function.dl_json(base_url, index_page)
 db = index["index"]
 # Calcul entire pages
-info = function.dl_json(base_url, db["info"]["key"])
+info = function.dl_json(base_url, db["profile"]["key"])
 exp = function.dl_json(base_url, db["experiences"]["key"])
 edu = function.dl_json(base_url, db["education"]["key"])
 publi = function.dl_json(base_url, db["publications"]["key"])
 projec = function.dl_json(base_url, db["projects"]["key"])
 # Profile pic
-photo_profile = function.dl_img(img_url=info["info"]["photo_url"], dest="data/profile.png")
-# Profile
-profile.profile(json_data=info, _photo_profile=photo_profile)
+photo_profile = function.dl_img(img_url=info["profile"]["photo_url"], dest="data/profile.png")
 
 # Filter
 index_filter, exp_col, edu_col, publi_col, projects_col = st.columns(5)
 index_filter.write("##### Filter")
-exp_box = exp_col.checkbox('Experiences')
-edu_box = edu_col.checkbox('Education')
-publi_box = publi_col.checkbox('Publications')
+exp_box = exp_col.checkbox('Experiences', True)
+edu_box = edu_col.checkbox('Education', True)
+publi_box = publi_col.checkbox('Publications', True)
 projects_box = projects_col.checkbox('Projects', True)
 st.write("---")
+
+# Profile
+profile.profile(json_data=info, _photo_profile=photo_profile)
 
 # Experiences
 if exp_box:
