@@ -31,7 +31,7 @@ urllib.request.urlretrieve(info["info"]["photo_url"], "data/profile.png")
 photo_profile = Image.open("data/profile.png")
 
 # Debug
-print(info["info"]["socials"])
+#print(info["info"]["socials"])
 
 # Profile
 profile = info["info"]
