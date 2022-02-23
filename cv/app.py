@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import urllib.request
 from pages import exp
+from pages import edu
 import function
 import common
 
@@ -87,6 +88,11 @@ with st.container():
     exp.exp(json=exp, base_url=base_url)
 
 # Education
+with st.container():
+    edu.edu(json=edu)
+    
+with st.container():
+    edu.cert(json=edu)
 
 # Publications
 
