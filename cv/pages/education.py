@@ -22,7 +22,7 @@ def edu(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("### " + elem["diploma"])
+                st.write("#### " + elem["diploma"])
                 st.write("**Specialty** : " + elem["title"])
                 level = elem["level"] + " - " if elem["level"] is not None else ""
                 st.write("**Level** : " + level + elem["date_begin"] + "  &#8594; " + elem["date_end"])
@@ -51,7 +51,7 @@ def cert(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("### " + elem["title"])
+                st.write("#### " + elem["title"])
                 type_cert = "Hackaton" if elem["diploma"] is not None else "Certification"
                 st.write("**Type** : " + type_cert + " - " + elem["date"])
                 st.write("**Organisation** : " + elem["organisme"])

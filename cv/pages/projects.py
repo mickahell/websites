@@ -21,7 +21,7 @@ def projects(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("### " + elem["title"])
+                st.write("#### " + elem["title"])
                 st.write("**Organisation** : " + elem["organisation"] + " - **Langue** : " + elem["language"])
                 st.write("**Opensource** : " + str(elem["opensource"]))
                 publish = "True" if elem["publish"] is not None else "Not yet"

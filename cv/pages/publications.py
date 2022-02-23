@@ -21,7 +21,7 @@ def publi(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("### " + elem["title"])
+                st.write("#### " + elem["title"])
                 st.write("**Author** : " + elem["author"])
                 st.write("**Field** : " + elem["field"])
                 st.write("**Type** : " + elem["type"] + " - **Langue** : " + elem["language"])
@@ -55,7 +55,7 @@ def blog(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("### " + elem["title"])
+                st.write("#### " + elem["title"])
                 st.write("**Author** : " + elem["author"])
                 st.write("**Field** : " + elem["field"])
                 st.write("**Langue** : " + elem["language"])

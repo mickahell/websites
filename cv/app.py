@@ -7,12 +7,13 @@ from pages import projects
 import function
 import common
 
-st.set_page_config(page_title="Resume", page_icon=":space_invader:", layout='wide', initial_sidebar_state='auto')
+st.set_page_config(page_title="Resume", page_icon=":page_with_curl:", layout='wide', initial_sidebar_state='auto')
 
 common.css()
 
 # Init var
-base_url = "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/english/"
+lang = "english"
+base_url = "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/" + lang + "/"
 index_page = "index"
 
 # Download json
