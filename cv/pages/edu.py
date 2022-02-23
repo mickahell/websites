@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def edu(json: json, base_url: str):
+def edu(json: json):
   """Show education
   Arg: 
     json: json of the page education
@@ -15,7 +15,7 @@ def edu(json: json, base_url: str):
     st.write(i["school"])
     country_city = " - " + i["country"] + " " + i["city"] if i["country"] and i["city"] is not None else ""
     
-def cert(json: json, base_url: str):
+def cert(json: json):
   """Show certifications
   Arg: 
     json: json of the page certifications
