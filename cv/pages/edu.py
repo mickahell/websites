@@ -14,6 +14,7 @@ def edu(json: json):
     st.write(level + i["date_begin"] + "  -> " + i["date_end"])
     st.write(i["school"])
     country_city = " - " + i["country"] + " " + i["city"] if i["country"] and i["city"] is not None else ""
+
     
 def cert(json: json):
   """Show certifications
