@@ -12,6 +12,20 @@ def publi(json_data: json):
     right_col, left_col = st.columns(2)
     line_container = st.container()
     for i, elem in enumerate(json_data["publications"]):
+        # Init var
+        title = elem["title"]
+        author = elem["author"]
+        field = elem["field"]
+        doc_type = elem["type"]
+        lang = elem["language"]
+        doi = elem["doi"]
+        paper_id = elem["paper_id"]
+        journal_name = elem["journal_name"]
+        journal_url = elem["journal_url"]
+        publi_date = elem["publication_date"]
+        abstract = elem["abstract"]
+
+        # Design page
         if i % 2 == 0:
             line_container = st.container()
             right_col, empty, left_col = st.columns([10, 1, 10])
@@ -21,17 +35,16 @@ def publi(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("#### " + elem["title"])
-                st.write("**Author** : " + elem["author"])
-                st.write("**Field** : " + elem["field"])
-                st.write("**Type** : " + elem["type"] + " - **Langue** : " + elem["language"])
-                st.write("**DOI** : [" + elem["doi"] + "](https://doi.org/" + elem["doi"] + ")" +
-                         " - **Hal id** : [" + elem["hal_id"] + "](https://hal.archives-ouvertes.fr/" +
-                         elem["hal_id"] + ")")
-                st.write("[**Read it on Hal**](" + elem["hal_url"] + ")")
-                st.write("**Publication date** : " + elem["publication_date"])
+                st.write("#### " + title)
+                st.write("**Author** : " + author)
+                st.write("**Field** : " + field)
+                st.write("**Type** : " + doc_type + " - **Langue** : " + lang)
+                st.write("**DOI** : [" + doi + "](https://doi.org/" + doi + ")" + " - **Hal id** : [" + paper_id + "]("
+                         + journal_url + paper_id + ")")
+                st.write("[**Read it on " + journal_name + "**](" + journal_url + paper_id + ")")
+                st.write("**Publication date** : " + publi_date)
                 with st.expander("Abstract :", False):
-                    st.write(elem["abstract"])
+                    st.write(abstract)
         if i % 2 == 0:
             st.write("---")
 
@@ -46,6 +59,17 @@ def blog(json_data: json):
     right_col, left_col = st.columns(2)
     line_container = st.container()
     for i, elem in enumerate(json_data["blogposts"]):
+        # Init var
+        title = elem["title"]
+        author = elem["author"]
+        field = elem["field"]
+        lang = elem["language"]
+        doi = elem["doi"]
+        url = elem["url"]
+        publi_date = elem["publication_date"]
+        abstract = elem["abstract"]
+
+        # Design page
         if i % 2 == 0:
             line_container = st.container()
             right_col, empty, left_col = st.columns([10, 1, 10])
@@ -55,14 +79,14 @@ def blog(json_data: json):
             sw_col = left_col
         with line_container:
             with sw_col:
-                st.write("#### " + elem["title"])
-                st.write("**Author** : " + elem["author"])
-                st.write("**Field** : " + elem["field"])
-                st.write("**Langue** : " + elem["language"])
-                st.write("**DOI of the project** : [" + elem["doi"] + "](https://doi.org/" + elem["doi"] + ")")
-                st.write("[**Read it**](" + elem["url"] + ")")
-                st.write("**Publication date** : " + elem["publication_date"])
+                st.write("#### " + title)
+                st.write("**Author** : " + author)
+                st.write("**Field** : " + field)
+                st.write("**Langue** : " + lang)
+                st.write("**DOI of the project** : [" + doi + "](https://doi.org/" + doi + ")")
+                st.write("[**Read it**](" + url + ")")
+                st.write("**Publication date** : " + publi_date)
                 with st.expander("Abstract :", False):
-                    st.write(elem["abstract"])
+                    st.write(abstract)
         if i % 2 == 0:
             st.write("---")
