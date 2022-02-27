@@ -11,6 +11,7 @@ def publi(json_data: json):
     st.write("## Publications")
     right_col, left_col = st.columns(2)
     line_container = st.container()
+
     for i, elem in enumerate(json_data["publications"]):
         # Init var
         title = elem["title"]
@@ -39,9 +40,27 @@ def publi(json_data: json):
                 st.write("**Author** : " + author)
                 st.write("**Field** : " + field)
                 st.write("**Type** : " + doc_type + " - **Langue** : " + lang)
-                st.write("**DOI** : [" + doi + "](https://doi.org/" + doi + ")" + " - **Hal id** : [" + paper_id + "]("
-                         + journal_url + paper_id + ")")
-                st.write("[**Read it on " + journal_name + "**](" + journal_url + paper_id + ")")
+                st.write(
+                    "**DOI** : ["
+                    + doi
+                    + "](https://doi.org/"
+                    + doi
+                    + ")"
+                    + " - **Hal id** : ["
+                    + paper_id
+                    + "]("
+                    + journal_url
+                    + paper_id
+                    + ")"
+                )
+                st.write(
+                    "[**Read it on "
+                    + journal_name
+                    + "**]("
+                    + journal_url
+                    + paper_id
+                    + ")"
+                )
                 st.write("**Publication date** : " + publi_date)
                 with st.expander("Abstract :", False):
                     st.write(abstract)
@@ -51,13 +70,14 @@ def publi(json_data: json):
 
 def blog(json_data: json):
     """Show blogposts
-  Arg: 
-    json: json of the page blogposts
-  Return: nothing
-  """
+    Arg:
+      json: json of the page blogposts
+    Return: nothing
+    """
     st.write("## Blog posts")
     right_col, left_col = st.columns(2)
     line_container = st.container()
+
     for i, elem in enumerate(json_data["blogposts"]):
         # Init var
         title = elem["title"]
@@ -83,7 +103,13 @@ def blog(json_data: json):
                 st.write("**Author** : " + author)
                 st.write("**Field** : " + field)
                 st.write("**Langue** : " + lang)
-                st.write("**DOI of the project** : [" + doi + "](https://doi.org/" + doi + ")")
+                st.write(
+                    "**DOI of the project** : ["
+                    + doi
+                    + "](https://doi.org/"
+                    + doi
+                    + ")"
+                )
                 st.write("[**Read it**](" + url + ")")
                 st.write("**Publication date** : " + publi_date)
                 with st.expander("Abstract :", False):

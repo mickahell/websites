@@ -7,13 +7,20 @@ from pages import projects
 import function
 import common
 
-st.set_page_config(page_title="Resume", page_icon=":page_with_curl:", layout='wide', initial_sidebar_state='auto')
+st.set_page_config(
+    page_title="Resume",
+    page_icon=":page_with_curl:",
+    layout="wide",
+    initial_sidebar_state="auto",
+)
 
 common.css()
 
 # Init var
 lang = "english"
-base_url = "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/" + lang + "/"
+base_url = (
+    "https://raw.githubusercontent.com/mickahell/mickahell/main/cv/json/" + lang + "/"
+)
 index_page = "index"
 
 # Download json
@@ -21,6 +28,16 @@ index_page = "index"
 # Calcul index
 index = function.dl_json(base_url, index_page)
 db = index["index"]
+cv_fr = (
+    "<form action="
+    + db["resume_fr"]
+    + "><input type='submit' value='FR: CV pdf' /></form>"
+)
+cv_en = (
+    "<form action="
+    + db["resume_en"]
+    + "><input type='submit' value='EN: Resume pdf' /></form>"
+)
 # Calcul entire pages
 info = function.dl_json(base_url, db["profile"]["key"])
 exp = function.dl_json(base_url, db["experiences"]["key"])
@@ -28,15 +45,17 @@ edu = function.dl_json(base_url, db["education"]["key"])
 publi = function.dl_json(base_url, db["publications"]["key"])
 projec = function.dl_json(base_url, db["projects"]["key"])
 # Profile pic
-photo_profile = function.dl_img(img_url=info["profile"]["photo_url"], dest="data/profile.png")
+photo_profile = function.dl_img(
+    img_url=info["profile"]["photo_url"], dest="data/profile.png"
+)
 
 # Filter
 index_filter, exp_col, edu_col, publi_col, projects_col = st.columns(5)
 index_filter.write("##### Filter")
-exp_box = exp_col.checkbox('Experiences', True)
-edu_box = edu_col.checkbox('Education', True)
-publi_box = publi_col.checkbox('Publications', True)
-projects_box = projects_col.checkbox('Projects', True)
+exp_box = exp_col.checkbox("Experiences", True)
+edu_box = edu_col.checkbox("Education", True)
+publi_box = publi_col.checkbox("Publications", True)
+projects_box = projects_col.checkbox("Projects", True)
 st.write("---")
 
 # Profile
@@ -68,8 +87,8 @@ if projects_box:
 
 # PDF access
 st.sidebar.write("---")
-cv_fr = "<form action=" + db["resume_fr"] + "><input type='submit' value='FR: CV pdf' /></form>"
-cv_en = "<form action=" + db["resume_en"] + "><input type='submit' value='EN: Resume pdf' /></form>"
+
+
 cvfr_col, cven_col = st.sidebar.columns(2)
 cvfr_col.write(cv_fr, unsafe_allow_html=True)
 cven_col.write(cv_en, unsafe_allow_html=True)

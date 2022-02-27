@@ -17,12 +17,19 @@ def exp(json_data: json, base_url: str):
     for i, elem in enumerate(json_data["experiences"]):
         # Init var
         title = elem["title"]
-        country_city = " - " + elem["country"] + " " + elem["city"] if elem["country"] and elem[
-            "city"] is not None else ""
+        country_city = (
+            " - " + elem["country"] + " " + elem["city"]
+            if elem["country"] and elem["city"] is not None
+            else ""
+        )
         entreprise = elem["entreprise"]
         date_begin = elem["date_begin"]
         date_end = elem["date_end"] if elem["date_end"] is not None else "today"
-        long_description_url = elem["long_description_url"] if elem["long_description_url"] is not None else None
+        long_description_url = (
+            elem["long_description_url"]
+            if elem["long_description_url"] is not None
+            else None
+        )
         short_description = elem["short_description"]
         list_tech = ""
         for tech in elem["technologies"]:

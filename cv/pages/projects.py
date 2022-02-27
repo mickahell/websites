@@ -11,6 +11,7 @@ def projects(json_data: json):
     st.write("## Projects")
     right_col, left_col = st.columns(2)
     line_container = st.container()
+
     for i, elem in enumerate(json_data["projects"]):
         # Init var
         title = elem["title"]

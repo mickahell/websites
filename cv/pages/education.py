@@ -19,8 +19,11 @@ def edu(json_data: json):
         level = elem["level"] + " - " if elem["level"] is not None else ""
         date_begin = elem["date_begin"]
         date_end = elem["date_end"]
-        country_city = " - " + elem["country"] + " " + elem["city"] if elem["country"] and elem[
-            "city"] is not None else ""
+        country_city = (
+            " - " + elem["country"] + " " + elem["city"]
+            if elem["country"] and elem["city"] is not None
+            else ""
+        )
         school = elem["school"]
 
         # Design page
@@ -43,10 +46,10 @@ def edu(json_data: json):
 
 def cert(json_data: json):
     """Show certifications
-  Arg: 
-    json: json of the page certifications
-  Return: nothing
-  """
+    Arg:
+      json: json of the page certifications
+    Return: nothing
+    """
     st.write("## Certifications")
     right_col, left_col = st.columns(2)
     line_container = st.container()
