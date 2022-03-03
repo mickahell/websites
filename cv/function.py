@@ -1,6 +1,7 @@
 import streamlit as st
 import urllib.request
 import json
+import os
 from PIL import Image
 
 
@@ -27,7 +28,8 @@ def dl_img(img_url: str, dest: str) -> Image:
         dest: dest to register the image
     Return: Image
     """
-    urllib.request.urlretrieve(img_url, dest)
-    return_img = Image.open(dest)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    urllib.request.urlretrieve(img_url, "{}/".format(current_dir) + dest)
+    return_img = Image.open(str("{}/".format(current_dir) + dest))
 
     return return_img
