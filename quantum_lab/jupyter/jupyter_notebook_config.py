@@ -289,7 +289,7 @@ c.NotebookApp.max_buffer_size = 536870912
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-#c.NotebookApp.password = ''
+c.NotebookApp.password = 'Porygon-Z'
 
 ## Forces users to use a password for the Notebook server. This is useful in a
 #  multi user environment, for instance when everybody in the LAN can access each
@@ -297,7 +297,7 @@ c.NotebookApp.max_buffer_size = 536870912
 #  
 #  In such a case, serving the notebook server on localhost is not secure since
 #  any user can connect to the notebook server via ssh.
-#c.NotebookApp.password_required = False
+c.NotebookApp.password_required = True
 
 ## The port the notebook server will listen on (env: JUPYTER_PORT).
 #c.NotebookApp.port = 8888
@@ -578,7 +578,7 @@ c.NotebookApp.terminals_enabled = False
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-#c.Session.username = 'mrollin'
+c.Session.username = 'oak'
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
