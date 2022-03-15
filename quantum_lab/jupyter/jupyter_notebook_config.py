@@ -289,7 +289,7 @@ c.NotebookApp.max_buffer_size = 536870912
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-c.NotebookApp.password = 'Porygon-Z'
+c.NotebookApp.password = u'sha1:f5ec842e29cc:ba577bafc3ce7609a23b833762cdee1b8f86d523'
 
 ## Forces users to use a password for the Notebook server. This is useful in a
 #  multi user environment, for instance when everybody in the LAN can access each
