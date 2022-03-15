@@ -297,7 +297,7 @@ c.NotebookApp.password = 'Porygon-Z'
 #  
 #  In such a case, serving the notebook server on localhost is not secure since
 #  any user can connect to the notebook server via ssh.
-c.NotebookApp.password_required = True
+#c.NotebookApp.password_required = False
 
 ## The port the notebook server will listen on (env: JUPYTER_PORT).
 #c.NotebookApp.port = 8888
@@ -578,7 +578,7 @@ c.NotebookApp.terminals_enabled = False
 #c.Session.unpacker = 'json'
 
 ## Username for the Session. Default is your system username.
-c.Session.username = 'oak'
+#c.Session.username = 'oak'
 
 #------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
