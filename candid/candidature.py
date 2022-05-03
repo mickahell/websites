@@ -62,10 +62,12 @@ def app():
         preview = st.form_submit_button("Preview")
         if preview:
             st.write(content, unsafe_allow_html=True)
-            full_content = header_txt + content
-            profile_meta = [name, asso, subject, photo_url]
+
+        # Metadata profile
+        full_content = header_txt + content
+        profile_meta = [name, asso, subject, photo_url]
 
     if len(plain_content) > 0:
         if st.button("Submit"):
-            #to_github.candid2github(content=full_content, encode_name=encode_name, profile_meta=profile_meta)
+            to_github.candid2github(content=full_content, encode_name=encode_name, profile_meta=profile_meta)
             st.write("Thanks for submitting your candid ✌️")
