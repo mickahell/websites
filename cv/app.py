@@ -1,9 +1,9 @@
 import streamlit as st
-from pages import profile
-from pages import experiences
-from pages import education
-from pages import publications
-from pages import projects
+from visual import profile
+from visual import experiences
+from visual import education
+from visual import publications
+from visual import projects
 import function
 import common
 
@@ -38,7 +38,7 @@ cv_en = (
     + db["resume_en"]
     + "><input type='submit' value='EN: Resume pdf' /></form>"
 )
-# Calcul entire pages
+# Calcul entire visual
 info = function.dl_json(base_url, db["profile"]["key"])
 exp = function.dl_json(base_url, db["experiences"]["key"])
 edu = function.dl_json(base_url, db["education"]["key"])
@@ -88,7 +88,6 @@ if projects_box:
 # PDF access
 st.sidebar.write("---")
 
-
 cvfr_col, cven_col = st.sidebar.columns(2)
 cvfr_col.write(cv_fr, unsafe_allow_html=True)
 cven_col.write(cv_en, unsafe_allow_html=True)
@@ -97,3 +96,6 @@ cven_col.write(cv_en, unsafe_allow_html=True)
 st.sidebar.write("---")
 if st.sidebar.button("Clear cache !"):
     st.experimental_memo.clear()
+    photo_refresh = function.dl_img(
+        img_url=info["profile"]["photo_url"], dest="data/profile.png", force=True
+    )
