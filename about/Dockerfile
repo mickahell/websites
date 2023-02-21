@@ -20,7 +20,7 @@ LABEL org.opencontainers.image.title="About" \
 RUN apt-get update -yq \
 && apt-get install python3-pip -y
 
-RUN pip3 install streamlit
+RUN pip3 install streamlit==1.16.0
 
 ADD about/ /opt/about/
 ADD common/common.py /opt/about/
