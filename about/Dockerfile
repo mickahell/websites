@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Var for labels
 ARG GITHUB_ACTOR
@@ -17,8 +17,10 @@ LABEL org.opencontainers.image.title="About" \
       org.opencontainers.image.os="Ubuntu Focal" \
       org.opencontainers.image.version=${GITHUB_REF}
 
-RUN apt-get update -yq
-RUN pip install streamlit
+RUN apt-get update -yq \
+&& apt-get install python3-pip -y
+
+RUN pip3 install streamlit
 
 ADD about/ /opt/about/
 ADD common/common.py /opt/about/
