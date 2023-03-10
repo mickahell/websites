@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.title="Quantum Lab" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq
-RUN pip install streamlit
+RUN pip install streamlit==1.16.0
 
 ADD quantum_lab/streamlit /opt/quantum_lab/
 ADD common/common.py /opt/quantum_lab/
