@@ -69,6 +69,7 @@ def menu_main():
             ▶︎ 🎭 **[Beta Museum](https://beta-museum.xtraorbitals.xyz)**
             """)
     st.sidebar.write("""▶︎ 🗞 **[Blog](https://blog.xtraorbitals.xyz)**""")
+    st.sidebar.write("""▶︎ 📑 **[Resume](https://cv.xtraorbitals.xyz)**""")
     st.sidebar.write("""▶︎ **[About](https://about.xtraorbitals.xyz)**""")
 
 
