@@ -1,5 +1,5 @@
 ARG LAB_ENV
-#ARG LAB_ENV=qiskit
+#ARG LAB_ENV=qiskit-full
 #ARG LAB_ENV=qml
 #ARG LAB_ENV=cirq
 
