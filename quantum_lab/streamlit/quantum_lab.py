@@ -12,8 +12,6 @@ def app():
             <tbody>
                 <tr>
                     <td align="center"><a href="http://qiskit.xtraorbitals.xyz"><b>Qiskit</b></a></td>
-                    <td align="center"><a href="http://pennylane.xtraorbitals.xyz"><b>Pennylane</b></a></td>
-                    <td align="center"><a href="http://cirq.xtraorbitals.xyz"><b>Cirq</b></a></td>
                 </tr>
             </tbody>
         </table>
@@ -30,7 +28,7 @@ def app():
     lib_commun = col0.expander("Common")
     lib_commun.write("```python3.8, networkx, numpy, matplotlib, notebook, pandas, scipy, tk```")
     libs_qiskit = col1.expander("Qiskit")
-    libs_qiskit.write("```qiskit, qiskit[visualization], qiskit-nature```")
+    libs_qiskit.write("```qiskit, qiskit[visualization], qiskit[nature], qiskit[finance], qiskit[optimization], qiskit[machine-learning]```")
     libs_qml = col2.expander("Pennylane / QML")
     libs_qml.write("```autograd, pennylane, pennylane-sf, pennylane-qiskit```")
     libs_cirq = col3.expander("Cirq")
@@ -44,6 +42,7 @@ def app():
 
     ## DockerHub
     [![Docker Pulls](https://img.shields.io/docker/pulls/mickahell/quantum_lab_qiskit?label=Quantum%20Lab%20Qiskit&style=for-the-badge)](https://hub.docker.com/r/mickahell/quantum_lab_qiskit)
+    [![Docker Pulls](https://img.shields.io/docker/pulls/mickahell/quantum_lab_qiskit-full?label=Quantum%20Lab%20Qiskit-full&style=for-the-badge)](https://hub.docker.com/r/mickahell/quantum_lab_qiskit-full)
     [![Docker Pulls](https://img.shields.io/docker/pulls/mickahell/quantum_lab_qml?label=Quantum%20Lab%20QML&style=for-the-badge)](https://hub.docker.com/r/mickahell/quantum_lab_qml)
     [![Docker Pulls](https://img.shields.io/docker/pulls/mickahell/quantum_lab_qsharp?label=Quantum%20Lab%20Q%23&style=for-the-badge)](https://hub.docker.com/r/mickahell/quantum_lab_qsharp)
     [![Docker Pulls](https://img.shields.io/docker/pulls/mickahell/quantum_lab_myqlm?label=Quantum%20Lab%20myQLM&style=for-the-badge)](https://hub.docker.com/r/mickahell/quantum_lab_myqlm)
