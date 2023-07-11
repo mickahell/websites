@@ -33,7 +33,7 @@ RUN pip install jupyterthemes
 # Jupyter conf
 RUN jt -t chesterish -T -N
 COPY quantum_lab/jupyter/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
-COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
+#COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
 #COPY quantum_lab/jupyter/custom.css /root/.jupyter/custom/custom.css
 #COPY quantum_lab/jupyter/${LAB_ENV}_logo.png /root/.jupyter/custom/logo.png
 
