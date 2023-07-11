@@ -29,7 +29,7 @@ RUN apt-get update -yq && apt-get dist-upgrade -yq
 RUN pip install jupyterthemes
 
 # Jupyter conf
-#RUN jt -t onedork -T -N
+RUN jt -t chesterish -T -N
 COPY quantum_lab/jupyter/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
 COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
 #COPY quantum_lab/jupyter/custom.css /root/.jupyter/custom/custom.css
