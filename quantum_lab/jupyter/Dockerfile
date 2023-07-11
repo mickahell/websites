@@ -15,6 +15,8 @@ ARG GITHUB_REF
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
 ENV LAB=${LAB_ENV}
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 LABEL org.opencontainers.image.title="Online ${LAB_ENV} Lab" \
       org.opencontainers.image.authors=${GITHUB_ACTOR} \
