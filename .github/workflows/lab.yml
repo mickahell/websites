@@ -46,7 +46,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build image
-      run: docker build . --build-arg LAB_ENV=qiskit --file ${{ env.BASEFOLDER }}/${{ env.PATH_FOLDER }}/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest
+      run: docker build . --build-arg LAB_ENV=qiskit-full --file ${{ env.BASEFOLDER }}/${{ env.PATH_FOLDER }}/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Push image
