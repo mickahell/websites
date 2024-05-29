@@ -1,11 +1,4 @@
-ARG LAB_ENV
-#ARG LAB_ENV=qiskit-full
-#ARG LAB_ENV=qml
-#ARG LAB_ENV=cirq
-
-FROM mickahell/quantum_lab_${LAB_ENV}:latest
-
-ARG LAB_ENV
+FROM mickahell/quantum_lab_qiskit:latest
 
 # Var for labels
 ARG GITHUB_ACTOR
@@ -14,28 +7,22 @@ ARG GITHUB_REF
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Paris
-ENV LAB=${LAB_ENV}
+ENV LAB=qiskit
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 
-LABEL org.opencontainers.image.title="Online ${LAB_ENV} Lab" \
+LABEL org.opencontainers.image.title="Online qiskit Lab" \
       org.opencontainers.image.authors=${GITHUB_ACTOR} \
       org.opencontainers.image.vendor=${GITHUB_REPOSITORY} \
       org.opencontainers.image.source="https://github.com/mickahell/websites" \
       org.opencontainers.image.url="https://github.com/mickahell/websites/tags" \
-      org.opencontainers.image.description="Online Quantum Lab for ${LAB_ENV} env" \
-      org.opencontainers.image.os="Ubuntu Bionic" \
+      org.opencontainers.image.description="Online Quantum Lab for qiskit env" \
       org.opencontainers.image.version=${GITHUB_REF}
 
 RUN apt-get update -yq && apt-get dist-upgrade -yq
-RUN pip install jupyterthemes
 
 # Jupyter conf
-RUN jt -t chesterish -T -N
 COPY quantum_lab/jupyter/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
-COPY quantum_lab/jupyter/custom.js /root/.jupyter/custom/custom.js
-COPY quantum_lab/jupyter/custom.css /root/.jupyter/custom/custom.css
-COPY quantum_lab/jupyter/${LAB_ENV}_logo.png /root/.jupyter/custom/logo.png
 
 ADD quantum_lab/jupyter/start_jupyter.sh /opt/quantum_lab/
 
