@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'Job to run -> page, qiskit, pennylane, cirq'
+        description: 'Job to run -> page, qiskit'
         required: true
         default: 'all'
 jobs:
@@ -46,7 +46,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build image
-      run: docker build . --build-arg --file ${{ env.BASEFOLDER }}/${{ env.PATH_FOLDER }}/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest
+      run: docker build . --file ${{ env.BASEFOLDER }}/${{ env.PATH_FOLDER }}/Dockerfile --tag ${{ env.IMAGE_NAME }}:latest
     - name: Log in to registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Push image
